@@ -48,7 +48,7 @@ export default function AddStudent() {
                     console.log("Teachers added successfully send")
                     settitle('')
                     setimageLinksa([])
-                    // setimageLinksb([])
+                    
                     sendSuccessfull()
                     route.push("/admin/students")
                 })

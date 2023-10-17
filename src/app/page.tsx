@@ -7,7 +7,7 @@ export const metadata:Metadata={
   description:"islamic University Laboratory School is the most amaizing School "
 }
 
-export default function Page() {
+export default function FrontPage() {
   return (
     <div>
       <HomePage/>

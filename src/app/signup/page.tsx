@@ -5,7 +5,7 @@ import React, { useState } from 'react'
 
 export default function SignUpPage() {
 
-  const [user, setuser] = useState({
+  const [user, setUser] = useState({
     username:"",
     email:"",
     password:""
@@ -39,15 +39,15 @@ export default function SignUpPage() {
             <h1 className='text-3xl'>SIGN UP</h1>
             <div>
               <label htmlFor="name">name : </label>
-              <input type='text' onChange={(e)=>setuser({...user, username:e.target.value})}  className='text-black p-2 rounded-md' placeholder='name' />
+              <input type='text' onChange={(e)=>setUser({...user, username:e.target.value})}  className='text-black p-2 rounded-md' placeholder='name' />
             </div>
             <div>
               <label htmlFor="email">email : </label>
-              <input type='email'  onChange={(e)=>setuser({...user, email:e.target.value})} className='text-black p-2 rounded-md' placeholder='email' />
+              <input type='email'  onChange={(e)=>setUser({...user, email:e.target.value})} className='text-black p-2 rounded-md' placeholder='email' />
             </div>
             <div>
               <label htmlFor="password">password : </label>
-              <input type='password' onChange={(e)=>setuser({...user, password:e.target.value})} className='text-black p-2 rounded-md' placeholder='password' />
+              <input type='password' onChange={(e)=>setUser({...user, password:e.target.value})} className='text-black p-2 rounded-md' placeholder='password' />
             </div>
             <button onClick={handleSubmit} className='text-white bg-slate-950 p-2 rounded-md hover:bg-slate-900'>SIGN UP </button>
           </div>

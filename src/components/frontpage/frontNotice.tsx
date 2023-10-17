@@ -86,7 +86,7 @@ export function FrontNotice() {
                                                                 <a href={image} className="">Download Pdf</a>
                                                             </Button>
                                                             :
-                                                            <img src={image} className="my-6" alt="" />
+                                                            <img src={image} className="my-6" alt="Image" />
                                                             }
                                                         </div>
                                                     ))}
