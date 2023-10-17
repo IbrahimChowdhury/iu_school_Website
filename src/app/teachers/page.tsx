@@ -7,7 +7,7 @@ export const metadata:Metadata={
     description:"Teachers of Islamic University School And college"
 }
 
-export default function Page() {
+export default function TeachersPage() {
   return (
     <div>
         <TeacherSection/>

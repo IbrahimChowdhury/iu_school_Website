@@ -6,7 +6,7 @@ export const metadata: Metadata = {
   title: 'Notice',
   description: 'Notice of Islamic University Laboratory School',
 }
-export default function Page() {
+export default function NoticePage() {
   return (
     <div>
 

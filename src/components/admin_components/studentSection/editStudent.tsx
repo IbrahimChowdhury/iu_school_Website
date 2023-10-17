@@ -19,46 +19,31 @@ interface EditNoticeProps {
 
 const EditStudent: React.FC<EditNoticeProps> = ({ id, title: initialTitle, imageLinksa: initialImageLinksa, imageLinksb: initialImageLinksb }) => {
     const router = useRouter()
-  // State variables
   const [title, setTitle] = useState(initialTitle);
 
   const [imageLinksa, setImageLinksa] = useState<string[]>(
     Array.isArray(initialImageLinksa) ? initialImageLinksa : [initialImageLinksa]
   );
   
-  // const [imageLinksb, setImageLinksb] = useState<string[]>(
-  //   Array.isArray(initialImageLinksb) ? initialImageLinksb : [initialImageLinksb]
-  // );
   
-  // Function to handle image deletion
   const deleteImagea = (image: string) => {
     const newImageLinks = imageLinksa.filter(link => link !== image);
     setImageLinksa(newImageLinks);
   };
-  // const deleteImageb = (image: string) => {
-  //   const newImageLinks = imageLinksb.filter(link => link !== image);
-  //   setImageLinksb(newImageLinks);
-  // };
-
-  // Function to handle form submission
+ 
   const editStudent = async (e: React.FormEvent) => {
     e.preventDefault();
     try {
       const info = {
         title,
         imageLinksa,
-        // imageLinksb
       };
 
-      // Perform the API call to update the notice
       await axios.put(`/api/student/${id}`, info);
-      // Optionally, clear the form fields
       setTitle('');
       setImageLinksa([]);
-      // setImageLinksb([]);
       router.push("/admin/students")
     } catch (error) {
-      // Handle any API request errors
       console.error(error);
     }
   };

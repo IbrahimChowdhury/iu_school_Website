@@ -79,7 +79,7 @@ export function FrontNotice() {
                                                 
                                                 <ScrollArea className="h-96">
                                                     {notice?.imageLinks.length>0 && notice?.imageLinks?.map((image:any,i:any)=>(
-                                                        <div>
+                                                        <div key={i}>
                                                             {   image.split('.').pop()?.toLowerCase() === "pdf"? 
                                                             <Button className="mt-10" asChild>
 

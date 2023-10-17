@@ -13,7 +13,7 @@ export default function FrontCarosel() {
  <div className="box">
       <Carousel className="" on showStatus={false} autoPlay={true} infiniteLoop={true} interval={4000} >
         {images.map((URL, index) => (
-          <div className="slide  ">
+          <div key={index} className="slide  ">
             <img alt="sample_file" id="img" src={URL} key={index} />
           </div>
         ))}

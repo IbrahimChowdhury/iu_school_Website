@@ -116,7 +116,7 @@ export default function StudentsList() {
                                                     
                                                     <ScrollArea className="h-96">
                                                         {notice?.imageLinksa.length>0 && notice?.imageLinksa?.map((image:any,i:any)=>(
-                                                            <div>
+                                                            <div key={i}>
                                                                 {   image.split('.').pop()?.toLowerCase() === "pdf"? 
                                                                 <Button className="mt-10" asChild>
     

@@ -4,7 +4,7 @@ import Image from 'next/image';
 import { useEffect, useState } from 'react';
 import TeacherCard from './teachercard';
 
-export default  function etTeacherSection() {
+export default  function GetTeacherSection() {
   const [teacher, setTeacher] = useState([]);
 
   useEffect(() => {

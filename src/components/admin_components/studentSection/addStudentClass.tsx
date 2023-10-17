@@ -24,11 +24,9 @@ import { ToastContainer, toast } from 'react-toastify';
 
 export default function AddStudent() {
         let route= useRouter()
-    // let {toast}=useToast()
     const [title, settitle] = useState('')
     const [file, setFile] = useState([])
     const [imageLinksa, setimageLinksa] =useState<string[]>([]);
-    // const [imageLinksb, setimageLinksb] =useState<string[]>(["http://res.cloudinary.com/dayewj4af/image/upload/v1695072323/oltgjhlnunsbmke44dz8.png","zwdvazsts39y4puo3ql1"]);
 
 
     const notify = () => toast.warn("Please add title")
@@ -37,7 +35,7 @@ export default function AddStudent() {
     const info:any={
         title,
         imageLinksa,
-        // imageLinksb
+        
     }
 
     const AddClass = async(e:any) =>{
@@ -60,10 +58,6 @@ export default function AddStudent() {
             }
             if(title.length == 0){
 
-                // toast({
-                //     title: "Success",
-                //     description: "Notice Added Successfully", 
-                // })
                 ;
                
                 notify()
@@ -78,9 +72,7 @@ export default function AddStudent() {
     const deleteImageA=(image:any):void=>{
       setimageLinksa(prevLinks => prevLinks.filter(link => link!==image))
   }
-  //   const deleteImageB=(image:any):void=>{
-  //     setimageLinksb(prevLinks => prevLinks.filter(link => link!==image))
-  // }
+  
 
   return (
     <div>

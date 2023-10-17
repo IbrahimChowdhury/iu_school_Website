@@ -5,7 +5,7 @@ import axios from "axios";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
-export default function page() {
+export default function SignInPage() {
     const notify = () => toast.error("Please enter right password and email");
 
     const router = useRouter();
@@ -14,8 +14,8 @@ export default function page() {
             email: '',
             password: '',
         })
-        const [buttonDisabled, setButtonDisabled] = React.useState(false);
-        const [loading, setLoading] = React.useState(false);
+        const [buttonDisabled, setButtonDisabled] = useState(false);
+        const [loading, setLoading] = useState(false);
 
         const onLogin = async (e:any) => {
             e.preventDefault();

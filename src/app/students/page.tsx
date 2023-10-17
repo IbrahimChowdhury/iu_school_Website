@@ -6,7 +6,7 @@ export const metadata:Metadata={
     title:"Students",
     description:"Students Of islamic University Laboratory School",
 }
-export default function Page() {
+export default function StudentsPage() {
   return (
     <div>
         <StudentsList/>
