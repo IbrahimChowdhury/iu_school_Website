@@ -58,8 +58,6 @@ export default function AddStudent() {
             }
             if(title.length == 0){
 
-                ;
-               
                 notify()
             }
            
@@ -94,7 +92,6 @@ export default function AddStudent() {
           </div>
 
     
-            {/* Section A */}
 
           <div className="border-b-2 border-black p-2">
             <h1>Add Student's Images For Section A</h1>
@@ -126,35 +123,7 @@ export default function AddStudent() {
           </div>
 
 
-          {/* Section B  */}
-          {/* <div className="border-b-2 border-black p-2">
-            <h1 className="">Add Students Images For Section B</h1>
-          <div className="">
-            <Button  variant={"default"} asChild >
-                
-          <CldUploadButton  uploadPreset="y2ajiutc" onUpload={(result: any) => {
-                    setimageLinksb(prev => [...prev, result.info.url]);
-                    console.log(result);
-                }} />
-
-            </Button>
-                
-                <div className="flex gap-2 mt-4">
-                {imageLinksb.length>0 && imageLinksb.map((image,i)=>(
-                    <div className="relative " key={i}>
-
-                        <CldImage rel="preload"  width={100} height={100} key={image} src={image} alt="image" />
-                        <span onClick={()=>deleteImageB(image)}>
-                        <AiOutlineDelete   className="absolute text-white  top-2 right-3"
-                        />    
-                        </span>      
-                    </div>
-            ))}    
-                </div>
-           
-
-          </div>
-          </div> */}
+         
 
         </div>
         <>
