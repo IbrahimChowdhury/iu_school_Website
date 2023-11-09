@@ -1,32 +1,27 @@
-"use client"
+// "use client"
 import { Button } from '@/components/ui/button';
 import axios from 'axios'
 import Image from 'next/image';
 import React, { useEffect, useState } from 'react'
 
-export default function TeacherSection() {
-    type Notice = {
-        imageLinks?: string[];
-        title: string;
-        body?: string;
-      };
-      const [allNotices, setallNotices] = useState<Notice[]>([]); 
-
-    useEffect(() => {
-        getNotices()
-    }, [])
-
-    let getNotices = async () => {
-        try {
-            
-            let response = await axios.get("/api/teacher")
-            setallNotices(response.data)
-        } catch (error) {
-            console.error("error getting day shift teacher data", error)
-        }
-
+const getTeachersData=async()=>{
+    try {
+      const response = await fetch(`${process.env.url}/api/teacher`,{
+        cache:"no-cache",
+      });
+      if(!response.ok)
+      {
+        throw new Error("failed to fetch classrooms  data")
+      }
+      return response.json()
+    } catch (error) {
+      console.log(error)
     }
-    const first:any=allNotices[2]
+    }
+
+const TeacherSection=async()=> {
+   const allAcademicData = await getTeachersData()
+    const first:any=allAcademicData[2]
 
     if(!first){
         return (
@@ -97,3 +92,6 @@ export default function TeacherSection() {
         )
     }
 }
+
+
+export default TeacherSection

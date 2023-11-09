@@ -1,31 +1,31 @@
-"use client"
+// "use client"
 import { Button } from '@/components/ui/button';
 import axios from 'axios'
 import React, { useEffect, useState } from 'react'
 
-export default function ClassRoutineSection() {
-    type Notice = {
-        imageLinks?: string[];
-        title: string;
-        body?: string;
-      };
-      const [allNotices, setallNotices] = useState<Notice[]>([]); 
 
-    useEffect(() => {
-        getNotices()
-    }, [])
 
-    let getNotices = async () => {
-        try {
-            const response = await axios.get("/api/class");
-            setallNotices(response.data);
-          } catch (error) {
-            console.error("Error fetching data:", error);
-          }
-
+const getClassRoomData=async()=>{
+    try {
+      const response = await fetch(`${process.env.url}/api/class`,{
+        cache:"no-cache",
+      });
+      if(!response.ok)
+      {
+        throw new Error("failed to fetch classrooms  data")
+      }
+      return response.json()
+    } catch (error) {
+      console.log(error)
     }
+    }
+
+
+const ClassRoutineSection=async()=> {
+   const allNotices = await getClassRoomData()
+   
     const first:any=allNotices[0]
-    if(!first)
+    if(!allNotices)
     {
         return(
             <div>
@@ -94,3 +94,5 @@ export default function ClassRoutineSection() {
         )
     }
 }
+
+export default ClassRoutineSection

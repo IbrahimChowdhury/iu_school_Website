@@ -1,4 +1,4 @@
-
+// "use client"
 import { Button } from "@/components/ui/button"
 import {
     Dialog,
@@ -11,7 +11,7 @@ import {
 } from "@/components/ui/dialog"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
-import { ScrollArea } from "@/components/ui/scroll-area"
+import { ScrollArea } from "../ui/scroll-area"
 import axios from "axios"
 
 import {
@@ -25,87 +25,56 @@ import {
 } from "@/components/ui/table"
 import Link from 'next/link'
 
-const getNoticeData=async()=>{
+
+const getAllNotice=async()=>{
     try {
       const response = await fetch(`${process.env.url}/api/notice`,{
         cache:"no-cache",
       });
       if(!response.ok)
       {
-        throw new Error("failed to fetch noticeSections data")
+        console.log("cannot fetch notice data")
+        throw new Error("failed to fetch front notice data")
+        
       }
       return response.json()
     } catch (error) {
-      console.log(error)
+      console.log(error.message)
     }
     }
 
-const  NoticeSection=async()=> {
-try {
+const  FrontNotice=async()=> {
     
-    const allNotices= await getNoticeData()
-   
-// console.log(allNotices)
-
-
-    if(allNotices.length === 0){
-        return(
-            <div>
-                <div className='w-screen h-screen flex justify-center items-center'>
-<div className="flex w-full max-w-md mx-auto overflow-hidden bg-white rounded-lg shadow-lg animate-pulse dark:bg-gray-800">
-    <div className="w-1/3 bg-gray-300 dark:bg-gray-600"></div>
-
-    <div className="w-2/3 p-4 md:p-4">
-        <h1 className="w-40 h-2 bg-gray-200 rounded-lg dark:bg-gray-700"></h1>
-
-        <p className="w-48 h-2 mt-4 bg-gray-200 rounded-lg dark:bg-gray-700"></p>
-
-        <div className="flex mt-4 item-center gap-x-2">
-            <p className="w-5 h-2 bg-gray-200 rounded-lg dark:bg-gray-700"></p>
-            <p className="w-5 h-2 bg-gray-200 rounded-lg dark:bg-gray-700"></p>
-            <p className="w-5 h-2 bg-gray-200 rounded-lg dark:bg-gray-700"></p>
-            <p className="w-5 h-2 bg-gray-200 rounded-lg dark:bg-gray-700"></p>
-            <p className="w-5 h-2 bg-gray-200 rounded-lg dark:bg-gray-700"></p>
-        </div>
-
-        <div className="flex justify-between mt-6 item-center">
-            <h1 className="w-10 h-2 bg-gray-200 rounded-lg dark:bg-gray-700"></h1>
-
-            <div className="h-4 bg-gray-200 rounded-lg w-28 dark:bg-gray-700"></div>
-        </div>
-    </div>
-</div>
-    </div>
-            </div>
-        )
-    }
-
-    if(allNotices)
-    {
-        
+    try {
+        const allNotices= await getAllNotice();
+     
+        if (!allNotices) {
+            return <div>No front  Notice  data available.</div>;
+          }
+        const notices = [allNotices[0], allNotices[1], allNotices[2], allNotices[3], allNotices[4]]
         return (
-            <div className="m-4 sm:mx-72 mb-20">
+            <div className="sm:w-4/5 m-4 sm:m-7">
                 <h1 className="text-center text-3xl font-bold mb-3 ">
-                    All Notice List
+                    Recent Notice List
                 </h1>
                 <div>
-                    <Table>
+                    <Table className="">
                         <TableCaption>A list of your recent Notices.</TableCaption>
-                        <TableHeader className="border-2">
-                            <TableRow className="text-xl">
-                                <TableHead className="border-2">Date</TableHead>
-                                <TableHead className="">Notice</TableHead>
+                        <TableHeader>
+                            <TableRow className="text-xl ">
+                                <TableHead className="border-2 ">Date</TableHead>
+                                <TableHead className="border-2 ">Notice</TableHead>
     
                             </TableRow>
                         </TableHeader>
                         <TableBody>
-                            {allNotices.map((notice: any, i: any) => (
+                            {notices.map((notice, i) => (
                                 <TableRow key={i}>
-                                    <TableCell className="font-medium border-2 sm:text-base">{notice?.date.slice(0, 7)}-{parseInt(notice?.date.slice(8, 10)) + 1}</TableCell>
-                                    <TableCell className='h-32 border-2 flex items-center sm:h-24 line-clamp-1 '>
+                                    <TableCell className="font-medium border-2 ">{notice?.date.slice(0, 7)}-{parseInt(notice?.date.slice(8, 10)) + 1}</TableCell>
+                                    <TableCell className='h-32  flex items-center border-b-2 border-r-2 line-clamp-1'>
                                         <Dialog>
-                                            <DialogTrigger asChild> 
-                                                <p className="hover:text-base w-full transition-all duration-200 hover:cursor-pointer"> {notice?.title}</p>
+                                            <DialogTrigger className="" asChild> 
+                                                <p className="hover:text-base transition-all duration-200 hover:cursor-pointer"> {notice?.title}</p>
                                             </DialogTrigger>
                                             <DialogContent className="w-5/6 sm:max-w-[700px] ">
                                                 <DialogHeader>
@@ -117,7 +86,7 @@ try {
                                                 <div className="grid gap-4 py-4">
                                                     
                                                     <ScrollArea className="h-96">
-                                                        {notice?.imageLinks.length>0 && notice?.imageLinks?.map((image:any,i:any)=>(
+                                                        {notice?.imageLinks.length>0 && notice?.imageLinks?.map((image,i)=>(
                                                             <div key={i}>
                                                                 {   image.split('.').pop()?.toLowerCase() === "pdf"? 
                                                                 <Button className="mt-10" asChild>
@@ -125,8 +94,8 @@ try {
                                                                     <a href={image} className="">Download Pdf</a>
                                                                 </Button>
                                                                 :
-                                                                <img src={image} className="my-6" alt="" />
-                                                                                            }
+                                                                <img src={image} className="my-6" alt="Image" />
+                                                                }
                                                             </div>
                                                         ))}
                                                             
@@ -143,21 +112,21 @@ try {
                         </TableBody>
                     </Table>
                 </div>
-                {/* <div className="text-center mt-5">
+                <div className="text-center mt-5">
                 <Button asChild><a href="/notice">See more Notices</a></Button>
-                </div> */}
+                </div>
             </div>
         )
+    } catch (error) {
+        console.error("Error in GetTeacherSection: ", error);
+        return <div>Error loading teacher data.</div>;
     }
-} catch (error) {
-    console.error("Error in GetTeacherSection: ", error);
-    return <div>Error loading Notice sections  data.</div>;
+   
 }
 
-    // const notices: any = [allNotices[0], allNotices[1], allNotices[2], allNotices[3], allNotices[4]]
-}
+export default FrontNotice
 
-export default NoticeSection
+
 
 
 

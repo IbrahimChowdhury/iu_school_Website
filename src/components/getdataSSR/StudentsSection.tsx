@@ -1,4 +1,4 @@
-"use client"
+// "use client"
 import { Button } from "@/components/ui/button"
 import {
     Dialog,
@@ -25,26 +25,29 @@ import {
     TableRow,
 } from "@/components/ui/table"
 import Link from 'next/link'
-export default function StudentsList() {
 
-    const [allNotices, setallNotices] = useState([])
-
-    useEffect(() => {
-        getNotices()
-    }, [])
-
-    let getNotices = async () => {
-      try {
-        
-        let response = await axios.get("/api/student")
-        setallNotices(response.data)
-      } catch (error) {
-        console.error("error getting students data : ", error)
+const getStudentsData=async()=>{
+    try {
+      const response = await fetch(`${process.env.url}/api/student`,{
+        cache:"no-cache",
+      });
+      if(!response.ok)
+      {
+        throw new Error("failed to fetch students  data")
       }
+      return response.json()
+    } catch (error) {
+      console.log(error)
     }
+    }
+
+const StudentsList=async()=> {
+
+   
 
 
     // creating a loading section 
+    const allNotices= await getStudentsData()
     const first:any=allNotices[0]
     if(!first)
     {
@@ -187,7 +190,7 @@ export default function StudentsList() {
 
 }
 
-
+export default StudentsList
 
 
 

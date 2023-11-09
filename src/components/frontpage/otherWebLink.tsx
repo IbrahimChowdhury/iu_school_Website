@@ -1,4 +1,3 @@
-"use client"
 import React from 'react'
 import { AiFillLinkedin, AiOutlineLink } from "react-icons/ai"
 export default function OtherWebLink() {

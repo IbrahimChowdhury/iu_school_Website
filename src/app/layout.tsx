@@ -5,7 +5,7 @@ import { Metadata } from 'next'
 import { ThemeProvider } from "@/components/ThemeProvider";
 
 
-export const metadata:Metadata  = {
+export const metadata  = {
   metadataBase: new URL("https://iu-school.vercel.app"),
   title: "Iu School",
   description: 'Islamic University Laboratory school and College',
