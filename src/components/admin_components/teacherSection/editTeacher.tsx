@@ -9,19 +9,25 @@ import { CldUploadButton, CldImage } from 'next-cloudinary';
 import axios from 'axios';
 import { useToast } from '@/components/ui/use-toast';
 import { useRouter } from 'next/navigation';
+import 'react-quill/dist/quill.bubble.css';
+import dynamic from "next/dynamic";
+const ReactQuill = dynamic(() => import('react-quill'), { ssr: false });
+
 
 interface EditNoticeProps {
   id: string;
   title: string;
+  name: string,
   body: string;
   imageLink: string  | string[];
 }
 
-const EditTeacher: React.FC<EditNoticeProps> = ({ id, title: initialTitle, body: initialBody, imageLink: initialImageLink }) => {
+const EditTeacher: React.FC<EditNoticeProps> = ({ id, title: initialTitle, name: initialName, body: initialBody, imageLink: initialImageLink }) => {
   const { toast } = useToast();
     const router = useRouter()
   // State variables
   const [title, setTitle] = useState(initialTitle);
+  const [name, setName] = useState(initialName);
   const [body, setBody] = useState(initialBody);
   const [imageLinks, setImageLinks] = useState<string[]>(
     Array.isArray(initialImageLink) ? initialImageLink : [initialImageLink]
@@ -38,6 +44,7 @@ const EditTeacher: React.FC<EditNoticeProps> = ({ id, title: initialTitle, body:
     try {
       const info = {
         title,
+        name,
         body,
         imageLinks,
       };
@@ -54,6 +61,7 @@ const EditTeacher: React.FC<EditNoticeProps> = ({ id, title: initialTitle, body:
       });
       // Optionally, clear the form fields
       setTitle('');
+      setName('');
       setBody('');
       setImageLinks([]);
       router.push("/admin/teachers")
@@ -70,16 +78,28 @@ const EditTeacher: React.FC<EditNoticeProps> = ({ id, title: initialTitle, body:
         <form onSubmit={editTeacher}>
           <div className="grid gap-4 py-4">
             <div className="flex items-center gap-4">
-              <Label htmlFor="name" className="text-right">
+              <Label htmlFor="title" className="text-right">
                 Title
               </Label>
-              <Input value={title} onChange={e => setTitle(e.target.value)} placeholder="Title" id="name" required />
+              <Input value={title} onChange={e => setTitle(e.target.value)} placeholder="Title" id="title" required />
+            </div>
+
+            <div className="flex items-center gap-4">
+              <Label htmlFor="name" className="text-right">
+                Name
+              </Label>
+              <Input value={name} onChange={e => setName(e.target.value)} placeholder="Name of the teacher" id="name" required />
             </div>
             <div className="flex items-center gap-4">
               <Label htmlFor="body" className="text-right">
                 Body
               </Label>
-              <Textarea value={body} onChange={e => setBody(e.target.value)} id="body" placeholder="Body" />
+              {/* <Textarea value={body} onChange={e => setBody(e.target.value)} id="body" placeholder="Body" /> */}
+              <div className="border-2 w-full">
+            {typeof window !== 'undefined' && (
+            <ReactQuill theme="bubble" value={body} onChange={setBody} />
+            )}
+            </div>
             </div>
             <div>
               <Button variant="default" asChild >

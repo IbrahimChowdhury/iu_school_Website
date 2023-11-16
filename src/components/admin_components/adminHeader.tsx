@@ -15,7 +15,7 @@ let route=[
     },
     {
         path:'/admin/teachers',
-        label:"Teachers and workers"
+        label:"Teachers"
     },
     {
         path:'/admin/students',
@@ -70,7 +70,7 @@ function AdminHeader() {
             </Sheet>
             </div>
         
-            <nav className=' bg-slate-200 dark:bg-slate-900 w-[250px] min-h-screen  content-between flex-col py-5 px-9 hidden  sm:block'>
+            <nav className=' bg-slate-200 dark:bg-slate-900 w-[250px] min-h-screen max-h-max  content-between flex-col py-5 px-9 hidden  sm:block'>
                 <div className=' max-h-screen flex flex-col content-between '>
                   <div className='flex flex-col gap-4 '>
                 <h1 className='text-2xl'>Admin panel</h1>

@@ -1,6 +1,7 @@
 // "use client"
 import { Button } from '@/components/ui/button';
 import axios from 'axios'
+import { Link } from 'lucide-react';
 import Image from 'next/image';
 import React, { useEffect, useState } from 'react'
 
@@ -20,8 +21,8 @@ const getTeachersData=async()=>{
     }
 
 const TeacherSection=async()=> {
-   const allAcademicData = await getTeachersData()
-    const first:any=allAcademicData[2]
+   const AllteachersData = await getTeachersData()
+    const first:any=AllteachersData[2]
 
     if(!first){
         return (
@@ -60,33 +61,37 @@ const TeacherSection=async()=> {
     if(first)
     {
         return (
-            <div>
-               <div className='sm:mx-20 sm:my-10 mb-10 mx-4 my-4'>
-    
-    <div className='flex flex-col gap-3 mb-10'>
-    
-                    <h1 className='text-2xl font-semibold dark:text-white '>{first?.title}</h1>
-                    <p className='pl-2 text-xs '>last update : {first?.date.slice(0, 7)}-{parseInt(first?.date.slice(8,10)) +1} </p>
-                    <div className='p-2'>
-                    <p className=' dark:text-white'>{first?.body}</p>
-                    </div>
-    </div>
-                    <div>
-                    {first?.imageLinks.length>0 && first?.imageLinks?.map((image:any,i:any)=>(
-                                                            <div key={i}>
-                                                                {   image.split('.').pop()?.toLowerCase() === "pdf"? 
-                                                                <Button className="mt-10" asChild>
-                                                                   <a href={image} className="">Download Pdf</a>
-                                                                </Button>
-                                                                :
-                                                                <img src={image} className="my-6" alt="" />
-                                                                // <Image width={300} height={100} src={image} className="my-6" alt="" />
-                                                                }
-                                                            </div>
-                                                        ))}
-                    </div>
-    
-               </div>
+            <div className=' m-10 ' >
+             <h1 className='text-center text-2xl font-semibold my-5'>Teachers Section </h1>
+             <div className='flex justify-center items-center'>
+
+             <div className='flex flex-col justify-center  sm:flex-row flex-wrap gap-7 '>
+                {
+                    AllteachersData.map((teacher: any, i:any) => (
+                        <div key={i} className="w-64 rounded-md shadow-md dark:bg-gray-900 dark:text-gray-100">
+                            <div className='relative h-44'>
+
+                            <img src={teacher.imageLinks[0]} alt="" className="absolute object-cover object-top w-full rounded-t-md h-44 dark:bg-gray-500" />
+                            </div>
+
+                            <div className="flex flex-col justify-between p-6 space-y-8">
+
+
+                                <div className="space-y-2">
+                                    <h2 className="text-3xl font-semibold tracki">{teacher.title}</h2>
+                                    <p className="dark:text-gray-100 line-clamp-2">{teacher.name}</p>
+                                </div>
+                               <div className='flex justify-between'>
+                          <Button><a href={`/teachers/${teacher?._id}`}>View Profile</a></Button>
+                               </div>
+                            </div>
+                        </div>
+                    ))
+                }
+
+            </div>
+             </div>
+
                 
             </div>
         )

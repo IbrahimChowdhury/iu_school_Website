@@ -71,10 +71,10 @@ const  FrontNotice=async()=> {
                             {notices.map((notice, i) => (
                                 <TableRow key={i}>
                                     <TableCell className="font-medium border-2 ">{notice?.date.slice(0, 7)}-{parseInt(notice?.date.slice(8, 10)) + 1}</TableCell>
-                                    <TableCell className='h-32  flex items-center border-b-2 border-r-2 line-clamp-1'>
+                                    <TableCell className='h-32  flex items-center border-b-2 border-r-2 w-full line-clamp-1'>
                                         <Dialog>
                                             <DialogTrigger className="" asChild> 
-                                                <p className="hover:text-base transition-all duration-200 hover:cursor-pointer"> {notice?.title}</p>
+                                                <p className="hover:text-base w-full transition-all duration-200 hover:cursor-pointer"> {notice?.title}</p>
                                             </DialogTrigger>
                                             <DialogContent className="w-5/6 sm:max-w-[700px] ">
                                                 <DialogHeader>

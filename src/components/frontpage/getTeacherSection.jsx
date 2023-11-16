@@ -48,13 +48,14 @@ const GetTeacherSection=async()=>{
   
     const first = teacher[0];
     const second = teacher[1];
+   
     const third = teacher[2];
   
     return (
       <div>
-        <div className="flex sm:flex-row mb-10 gap-3 flex-col m-4 md:m-0 justify-center sm:items-baseline items-center">
-          <TeacherCard imageLink={first?.imageLinks[0]} title={first?.title} body={first?.body} />
-          <TeacherCard imageLink={second?.imageLinks[0]} title={second?.title} body={second?.body} />
+        <div className="flex sm:flex-row mb-10 gap-3 flex-col m-4 md:m-0 justify-center items-center">
+          <TeacherCard imageLink={first?.imageLinks[0]} title={first?.title} body={first?.name} />
+          <TeacherCard imageLink={second?.imageLinks[0]} title={second?.title} body={second?.name} />
         </div>
   
         <div>

@@ -8,9 +8,9 @@ export async function POST(request: NextRequest) {
    try {
       await connectDB()
       let reqBody: any = await request.json()
-      let { title, body, imageLinks } = reqBody
+      let { title,name, body, imageLinks } = reqBody
 
-      let teacher = new Teachers({ title, body, imageLinks });
+      let teacher = new Teachers({ title,name, body, imageLinks });
       await teacher.save();
       
       console.log(teacher);

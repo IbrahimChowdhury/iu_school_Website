@@ -35,9 +35,9 @@ export async function PUT(req: NextRequest) {
   try {
     await connectDB()
     let reqBody: any = await req.json()
-    let { title, body, imageLinks } = reqBody
+    let { title,name, body, imageLinks } = reqBody
     let url: any = req.url.split("teacher/")[1];
-    let teacherData = await Teachers.findByIdAndUpdate({ _id: url }, { title, body, imageLinks });
+    let teacherData = await Teachers.findByIdAndUpdate({ _id: url }, { title,name, body, imageLinks });
     return NextResponse.json(teacherData, { status: 200 });
   } catch (error) {
     console.error('Error updating teacher:', error);

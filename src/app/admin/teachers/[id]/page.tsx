@@ -22,6 +22,7 @@ import EditTeacher from "@/components/admin_components/teacherSection/editTeache
 
 interface teacherData {
   title: string;
+  name:string,
   body: string;
   imageLinks: string[]; // Adjust the type based on your actual data structure
 }
@@ -57,6 +58,7 @@ export default function Addteacher({ params }: AddteacherProps) {
         <EditTeacher
           id={id}
           title={teacherData.title}
+          name={teacherData.name}
           body={teacherData.body}
           imageLink={teacherData.imageLinks}
         />

@@ -5,9 +5,13 @@ const  teachersSchema = new mongoose.Schema({
         type:String,
         required:[true,"please porovide a user name"],
     },
+    name:{
+        type:String,
+    },
     body:{
         type:String,
       },
+
    imageLinks:{
         type:Array,
 

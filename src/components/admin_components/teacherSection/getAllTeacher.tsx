@@ -75,15 +75,17 @@ export default function GetAllTeachers() {
             <div className='flex flex-col sm:flex-row flex-wrap gap-7 '>
                 {
                     allNotices.map((notice: any, i:any) => (
-                        <div key={i} className="max-w-xs rounded-md shadow-md dark:bg-gray-900 dark:text-gray-100">
-                            <img src={notice.imageLinks[0]} alt="" className="object-cover object-center w-full rounded-t-md h-44 dark:bg-gray-500" />
+                        <div key={i} className="w-64 rounded-md shadow-md dark:bg-gray-900 dark:text-gray-100">
+                            <div className='relative h-44'>
+                            <img src={notice.imageLinks[0]} alt="" className="absolute object-cover object-top w-full rounded-t-md h-44 dark:bg-gray-500" />
+                            </div>
 
                             <div className="flex flex-col justify-between p-6 space-y-8">
 
 
                                 <div className="space-y-2">
                                     <h2 className="text-3xl font-semibold tracki">{notice.title}</h2>
-                                    <p className="dark:text-gray-100 line-clamp-2">{notice.body}</p>
+                                    <p className="dark:text-gray-100 line-clamp-2">{notice?.name}</p>
                                 </div>
                                <div className='flex justify-between'>
                                <Button><Link href={`/admin/teachers/${notice?._id}`}>Update</Link></Button>

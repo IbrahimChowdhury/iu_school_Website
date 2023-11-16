@@ -22,10 +22,18 @@ import { useRouter } from "next/navigation";
 import { ToastContainer, toast } from 'react-toastify';
   import 'react-toastify/dist/ReactToastify.css';
 
+  //  import ReactQuill from 'react-quill';
+
+import 'react-quill/dist/quill.bubble.css';
+import dynamic from "next/dynamic";
+const ReactQuill = dynamic(() => import('react-quill'), { ssr: false });
+
+
 export default function AddTeachers() {
         let route= useRouter()
     // let {toast}=useToast()
     const [title, settitle] = useState('')
+    const [name, setName] = useState('')
     const [body, setBody] = useState('')
     const [file, setFile] = useState([])
     const [imageLinks, setimageLinks] =useState<string[]>([]);
@@ -36,6 +44,7 @@ export default function AddTeachers() {
 
     const info:any={
         title,
+        name,
         body,
         imageLinks
     }
@@ -49,6 +58,7 @@ export default function AddTeachers() {
 
                     console.log("Teachers added successfully send")
                     settitle('')
+                    setName('')
                     setBody('')
                     setimageLinks([])
                     sendSuccessfull()
@@ -91,17 +101,31 @@ export default function AddTeachers() {
         </div>
         <div className="grid gap-4 py-4">
           <div className="flex items-center gap-4">
-            <Label htmlFor="name" className="text-right">
+            <Label htmlFor="title" className="text-right">
               Title
             </Label>
-            <Input value={title} onChange={(e)=>settitle(e.target.value)}  placeholder="Title of the teachers" id="name"  className="col-span-3" required />
+            <Input value={title} onChange={(e)=>settitle(e.target.value)}  placeholder="Title of the teachers" id="title"  className="col-span-3" required />
+          </div>
+          <div className="flex items-center gap-4">
+            <Label htmlFor="name" className="text-right">
+              Name
+            </Label>
+            <Input value={name} onChange={(e)=>setName(e.target.value)}  placeholder="name of the teacher" id="name"  className="col-span-3" required />
           </div>
           <div className="flex  items-center gap-4">
             <Label htmlFor="body" className="text-right">
               Body
             </Label>
-            <Textarea value={body} onChange={(e)=>setBody(e.target.value)} id='body' placeholder="Body section if needed"/>
+            <div className="border-2 w-full">
+            {typeof window !== 'undefined' && (
+            <ReactQuill theme="bubble" value={body} onChange={setBody} />
+            )}
+            </div>
+            {/* <Textarea value={body} onChange={(e)=>setBody(e.target.value)} id='body' placeholder="Body section if needed"/> */}
           </div>
+            
+
+            
           <div className="">
             <Button  variant={"default"} asChild >
                 
