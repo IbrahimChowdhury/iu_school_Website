@@ -12,9 +12,9 @@ export const metadata  = {
   applicationName:"iu School",
   keywords: [
     "IU School",
-    "Islamic University School",
-    "Vercel School Website",
-    "Education at IU School",
+    "Islamic University School and college",
+    "islamic university School Website",
+    "Education at Islamic University  School",
     "Islamic University Laboratory School",
     "IU School Programs",
     "Academic Excellence",

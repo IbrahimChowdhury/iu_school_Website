@@ -59,8 +59,8 @@ const GetTeacherSection=async()=>{
         </div>
   
         <div>
-          <section className="dark:bg-gray-800 dark:text-gray-100">
-            <div className="container flex flex-col justify-center items-center  p-6 mx-auto sm:py-12 lg:py-24 lg:flex-row lg:justify-between">
+          <section className="mt-10 dark:bg-gray-800 dark:text-gray-100">
+            <div className="container flex flex-col justify-center items-center  p-2 mx-auto  lg:py-10 lg:flex-row lg:justify-between">
               <div className="flex flex-col justify-center p-6 text-center rounded-sm  xl:max-w-lg lg:text-left">
                 <h1 className="text-3xl font-bold leadi sm:text-4xl">
                   Speech Of Head Teacher
@@ -75,7 +75,7 @@ const GetTeacherSection=async()=>{
               </div>
               <div className="flex items-center justify-center pl-12 h-80 lg:mt-0  md:h-96 ">
                 {/* <Image height={500} width={500}  src={first?.imageLinks[0]} alt="" className="object-contain rounded-xl h-48 sm:h-80 lg:h-96 xl:h-112 2xl:h-128" /> */}
-                <img src={first?.imageLinks[0]} alt="" className="object-contain rounded-xl w-1/2 h-80  md:h-96 " />
+                <img src={first?.imageLinks[0]} alt="" className=" rounded-xl h-80   md:h-96 " />
               </div>
             </div>
           </section>

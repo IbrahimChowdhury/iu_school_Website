@@ -74,7 +74,7 @@ const TeacherSection=async()=> {
                             <img src={teacher.imageLinks[0]} alt="" className="absolute object-cover object-top w-full rounded-t-md h-44 dark:bg-gray-500" />
                             </div>
 
-                            <div className="flex flex-col justify-between p-6 space-y-8">
+                            <div className="flex flex-col p-3 justify-between  h-60">
 
 
                                 <div className="space-y-2">
