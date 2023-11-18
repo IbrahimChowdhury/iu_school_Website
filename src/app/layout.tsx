@@ -52,14 +52,14 @@ export default function RootLayout({
   return (
     <html lang="en" >
       <body >
-      <ThemeProvider  attribute="class" defaultTheme="system" enableSystem>
+      {/* <ThemeProvider  attribute="class" defaultTheme="system" enableSystem> */}
         <HeadBanner/>
         <Header1/>
           {/* <Header /> */}
           {children}
           <Footer/>
         
-        </ThemeProvider>
+        {/* </ThemeProvider> */}
         </body>
     </html>
   )
