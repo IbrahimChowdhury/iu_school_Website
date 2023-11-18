@@ -7,6 +7,7 @@ import FrontCarosel from "@/components/frontpage/frontCarosel"
 // import {FrontHeadNotice} from "@/components/frontpage/frontHeadNotice"
 import Image from 'next/image'
 import Location from './Location'
+import Divider from '@/components/divider'
 
 export default function  HomePage() {
   

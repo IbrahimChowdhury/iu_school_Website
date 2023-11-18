@@ -61,17 +61,20 @@ const TeacherSection=async()=> {
     if(first)
     {
         return (
-            <div className=' m-10 ' >
+            <div className='py-10 bg-gradient-to-b from-green-50 to-slate-200 ' >
              <h1 className='text-center text-2xl font-semibold my-5'>Teachers Section </h1>
              <div className='flex justify-center items-center'>
 
              <div className='flex flex-col justify-center  sm:flex-row flex-wrap gap-7 '>
                 {
                     AllteachersData.map((teacher: any, i:any) => (
-                        <div key={i} className="w-64 rounded-md shadow-md dark:bg-gray-900 dark:text-gray-100">
-                            <div className='relative h-44'>
+                        <div key={i} className="w-64 
+                        bg-white group hover:cursor-pointer
+                        rounded-md shadow-md dark:bg-gray-900 dark:text-gray-100">
+                            <div className='relative 
+                            h-44'>
 
-                            <img src={teacher.imageLinks[0]} alt="" className="absolute object-cover object-top w-full rounded-t-md h-44 dark:bg-gray-500" />
+                            <img src={teacher.imageLinks[0]} alt="" className="absolute object-cover  transition-all duration-300  group-hover:scale-95 object-top  w-full rounded-t-md h-44 dark:bg-gray-500" />
                             </div>
 
                             <div className="flex flex-col p-3 justify-between  h-60">
@@ -82,7 +85,7 @@ const TeacherSection=async()=> {
                                     <p className="dark:text-gray-100 line-clamp-2">{teacher.name}</p>
                                 </div>
                                <div className='flex justify-between'>
-                          <Button><a href={`/teachers/${teacher?._id}`}>View Profile</a></Button>
+                          <Button className='transition-all duration-300 hover:translate-x-3' ><a href={`/teachers/${teacher?._id}`}>View Profile</a></Button>
                                </div>
                             </div>
                         </div>

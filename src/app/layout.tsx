@@ -3,15 +3,22 @@ import './globals.css'
 import Footer from '@/components/frontpage/footer'
 import { Metadata } from 'next'
 import { ThemeProvider } from "@/components/ThemeProvider";
-
-
+import Header1 from "@/components/header1"
+import HeadBanner from "@/components/headBanner"
+import Divider from "@/components/divider"
 export const metadata  = {
-  metadataBase: new URL("https://iu-school.vercel.app"),
-  title: "Iu School",
-  description: 'Islamic University Laboratory school and College',
-  applicationName:"iu School",
+  metadataBase: new URL("https://www.iulabsc.com"),
+  title: "Islamic University Laboratory School and college",
+  description: 'Islamic University Laboratory School and College is one of the most renowed school in Kushtia',
+  applicationName:"islamic University School and College",
   keywords: [
+    "Islamic University Laboratory  School and College",
+    "iulabsc",
+    "iulab",
+    "iusc",
+    "iulaboratorySchool",
     "IU School",
+    "iulabsc",
     "Islamic University School and college",
     "islamic university School Website",
     "Education at Islamic University  School",
@@ -24,17 +31,11 @@ export const metadata  = {
     "IU School Curriculum",
     "Student Life",
     "IU School Events",
-    "Scholarships and Financial Aid",
-    "Campus Facilities",
-    "Contact IU School",
-    "Parent-Teacher Communication",
-    "School News and Updates",
-    "Student Achievements",
-    "Alumni Network"
+  
   ],
   authors: [{ name: 'ibrahim' }, { name: 'ibrahim Chowdhury', url: 'https://nextjs.org' }],
-  creator: 'Jiachi Liu',
-  publisher: 'Sebastian Markbåge',
+  creator: 'Ibrahim chowdhury',
+  publisher: 'Ibrahim chowdhury',
   alternates: {
     canonical: '/',
     languages: {
@@ -52,8 +53,9 @@ export default function RootLayout({
     <html lang="en" >
       <body >
       <ThemeProvider  attribute="class" defaultTheme="system" enableSystem>
-        
-          <Header />
+        <HeadBanner/>
+        <Header1/>
+          {/* <Header /> */}
           {children}
           <Footer/>
         

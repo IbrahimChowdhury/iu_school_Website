@@ -6,8 +6,8 @@ import React from 'react'
 
 
 export const metadata:Metadata={
-  title: 'IU Laboratory school',
-  description:"islamic University Laboratory School is the most amaizing School"
+  title: 'Islamic University Laboratory School and College',
+  description:"islamic University Laboratory School is the most amaizing School in Kushtia"
 }
 
 export default function FrontPage() {

@@ -53,9 +53,9 @@ export default function Header() {
 
 
   return (
-    <div className='mx-auto w-full  '>
+    <div className='mx-auto md:w-4/5  '>
 
-      <header className='sm:flex rounded-lg sm:pl-10 pl-5 flex justify-between sm:justify-between py-3 px-4 border-b  shadow-md'>
+      <header className='sm:flex rounded-lg sm:pl-10 pl-5 flex justify-center  sm:justify-center py-3 px-4 border-b  shadow-lg '>
         <div className='flex items-center'>
 
           <Sheet>
@@ -69,12 +69,12 @@ export default function Header() {
                     {route?.sub?.length > 0 ?
                       <div>
                         <DropdownMenu>
-                          <DropdownMenuTrigger className='flex hover:bg-slate-300 dark:hover:bg-slate-700 p-1 rounded-md  items-center gap-1'>{route.label} 
+                          <DropdownMenuTrigger  className='flex hover:bg-slate-300 dark:hover:bg-slate-700 p-1 rounded-md  items-center gap-1'>{route.label} 
                           {/* <svg className="w-5 h-5 text-gray-800 dark:text-white" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
             <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clipRule="evenodd" />
         </svg> */}
                             <AiOutlineDown/>
-                          </DropdownMenuTrigger>
+                          </DropdownMenuTrigger >
                           <DropdownMenuContent>
                             {
                               route.sub.map((sub:any,i:any)=>(
@@ -103,32 +103,32 @@ export default function Header() {
             </SheetContent>
           </Sheet>
 
-          <Link href={"/"} className='ml-4 lg:ml-0'>
+          {/* <Link href={"/"} className='ml-4 lg:ml-0'>
 
             <h1 className="text-xl font-bold">IU School</h1>
 
-          </Link>
+          </Link> */}
 
         </div>
 
         <nav className='mx-6 items-center  space-x-4 lg:space-x-6 hidden md:block'>
-          <div className='flex gap-7 items-center'>
+          <div className='flex gap-7 items-center transition-all duration-300'>
         {route.map((route, i) => (
                   <div key={i}>
                     {route?.sub?.length > 0 ?
                       <div>
                         <DropdownMenu>
-                          <DropdownMenuTrigger className='flex hover:bg-slate-300 dark:hover:bg-slate-700 p-1 rounded-md  items-center gap-1'>{route.label} 
+                          <DropdownMenuTrigger className='flex hover:border-b-2 hover:border-b-red-700 font-semibold text-sm hover:text-base transition-all duration-300  p-1  items-center '>{route.label} 
                           {/* <svg className="w-5 h-5 text-gray-800 dark:text-white" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
             <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clipRule="evenodd" />
         </svg> */}
                                     <AiOutlineDown/>
 
                           </DropdownMenuTrigger>
-                          <DropdownMenuContent>
+                          <DropdownMenuContent className='w-44 '>
                             {
                               route.sub.map((sub:any,i:any)=>(
-                                <DropdownMenuItem key={i} className={url === route.path[i] ? "bg-slate-300 dark:bg-slate-700 p-1 rounded-lg " : "" + `text-sm hover:bg-slate-300 dark:hover:bg-slate-700 p-1 rounded-md font-thin transition-colors`}>
+                                <DropdownMenuItem key={i} className={url === route.path[i] ? "hover:border-b-2 hover:border-b-red-700" : "" + `text-sm hover:border-b-2 hover:border-b-red-700 hover:text-base transition-all  duration-300 pl-10 `}>
                                   <a href={`/${sub}`}>{sub}</a>
                                 </DropdownMenuItem>
                               ))
@@ -141,7 +141,7 @@ export default function Header() {
                       <Link
                         key={i}
                         href={route.path[0]}
-                        className={url === route.path[0] ? "bg-slate-300 dark:bg-slate-700 p-2 rounded-lg shadow-sm shadow-black " : "" + `text-sm hover:bg-slate-300 dark:hover:bg-slate-700 p-1 rounded-md font-medium transition-all duration-200`}
+                        className={url === route.path[0] ? "border-b-2 border-b-red-700 dark:border-b-red-700 p-2 " : "" + `text-sm hover:border-b-2 hover:border-b-red-700 hover:text-lg p-1 font-medium transition-all duration-300`}
                       >
                         {route.label}
                       </Link>
@@ -150,7 +150,7 @@ export default function Header() {
                 ))}
           </div>
         </nav>
-
+{/* 
         <Button
           variant={'ghost'}
           size={'icon'}
@@ -162,7 +162,7 @@ export default function Header() {
           <Moon className="absolute h-6 w-6 rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
           <span className="sr-only">Toggle Theme</span>
 
-        </Button>
+        </Button> */}
 
       </header>
 

@@ -3,30 +3,29 @@ import Image from 'next/image';
 // import { useEffect, useState } from 'react';
 import TeacherCard from './teachercard';
 
- const getTeacherData=async()=>{
-try {
-  const response = await fetch(`${process.env.url}/api/teacher`,{
-    cache:"no-cache",
-  });
-  if(!response.ok)
-  {
-    throw new Error("failed to fetch teachers data")
+const getTeacherData = async () => {
+  try {
+    const response = await fetch(`${process.env.url}/api/teacher`, {
+      cache: "no-cache",
+    });
+    if (!response.ok) {
+      throw new Error("failed to fetch teachers data")
+    }
+    return response.json()
+  } catch (error) {
+    console.log(error.message)
   }
-  return response.json()
-} catch (error) {
-  console.log(error.message)
-}
 }
 
-const GetTeacherSection=async()=>{
+const GetTeacherSection = async () => {
   try {
-    
+
     // const [teacher, setTeacher] = useState([]);
-  
+
     // useEffect(() => {
     //   fetchTeacherData();
     // }, []);
-  
+
     // const fetchTeacherData = async () => {
     //   try {
     //     const response = await axios.get("/api/teacher");
@@ -35,33 +34,38 @@ const GetTeacherSection=async()=>{
     //     console.error("Error fetching teacher data: ", error);
     //   }
     // };
-  
+
     let teacher = await getTeacherData()
-  
+
     // console.log(teacher);
-    
-  
+
+
     if (teacher.length === 0) {
       return <div>No teacher data available.</div>;
     }
-  
-  
+
+
     const first = teacher[0];
     const second = teacher[1];
-   
+
     const third = teacher[2];
-  
+
     return (
-      <div>
-        <div className="flex sm:flex-row mb-10 gap-3 flex-col m-4 md:m-0 justify-center items-center">
-          <TeacherCard imageLink={first?.imageLinks[0]} title={first?.title} body={first?.name} />
-          <TeacherCard imageLink={second?.imageLinks[0]} title={second?.title} body={second?.name} />
-        </div>
-  
+      <div className='w-full'>
         <div>
-          <section className="mt-10 dark:bg-gray-800 dark:text-gray-100">
-            <div className="container flex flex-col justify-center items-center  p-2 mx-auto  lg:py-10 lg:flex-row lg:justify-between">
-              <div className="flex flex-col justify-center p-6 text-center rounded-sm  xl:max-w-lg lg:text-left">
+
+          <div className="py-7 flex bg-gradient-to-r w-full p-10  from-green-50 to-slate-300 sm:flex-row  gap-3 flex-col   justify-center items-center">
+
+            <TeacherCard imageLink={first?.imageLinks[0]} title={first?.title} body={first?.name} />
+            <TeacherCard imageLink={second?.imageLinks[0]} title={second?.title} body={second?.name} />
+
+            <div>
+            </div>
+          </div>
+
+          <section className=" py-5 bg-gradient-to-l  from-lime-50 to-slate-200 dark:bg-gray-800 dark:text-gray-100">
+            <div className=" w-3/4 flex flex-col justify-center items-center  mx-auto  lg:py-10 lg:flex-row lg:justify-between">
+              <div className="flex flex-col justify-center md:p-6 text-center rounded-sm  xl:max-w-lg lg:text-left">
                 <h1 className="text-3xl font-bold leadi sm:text-4xl">
                   Speech Of Head Teacher
                 </h1>
@@ -73,9 +77,9 @@ const GetTeacherSection=async()=>{
                   পাবে এবং দাপ্তরীক কাজের সচ্ছতা, গতিশীলতা, জবাবদিহিতা নিশ্চিত হবে ।
                 </p>
               </div>
-              <div className="flex items-center justify-center pl-12 h-80 lg:mt-0  md:h-96 ">
+              <div className="relative justify-center w-72 md:w-1/3 md:pl-12 h-80 lg:mt-0  md:h-96 ">
                 {/* <Image height={500} width={500}  src={first?.imageLinks[0]} alt="" className="object-contain rounded-xl h-48 sm:h-80 lg:h-96 xl:h-112 2xl:h-128" /> */}
-                <img src={first?.imageLinks[0]} alt="" className=" rounded-xl h-80   md:h-96 " />
+                <img src={first?.imageLinks[0]} alt="" className="absolute object-contain rounded-xl h-80   md:h-96 " />
               </div>
             </div>
           </section>

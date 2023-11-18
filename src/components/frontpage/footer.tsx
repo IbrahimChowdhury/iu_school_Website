@@ -3,42 +3,79 @@ import React from 'react'
 export default function Footer() {
   return (
     <div className=''>
-        <div>
-        <footer className=" border-t-2   border-b-2 bg-white dark:bg-gray-900 ">
-    <div className="container flex flex-col items-center justify-between px-6 py-8 mx-auto lg:flex-row">
-        <a href="#">
-            Ismaic University Laboratory School
-        </a>
+  <footer className="bg-gray-100 mt-8">
+  <div
+    className="relative mx-auto max-w-screen-xl px-4 py-4 sm:px-6 lg:px-8 lg:pt-5"
+  >
+    <div className="absolute end-4 top-4 sm:end-6 sm:top-6 lg:end-8 lg:top-8">
+      <a
+        className="inline-block rounded-full bg-teal-600 p-2 text-white shadow transition hover:bg-teal-500 sm:p-3 lg:p-4"
+        href="#headbanner"
+      >
+        <span className="sr-only">Back to top</span>
 
-        <div className="flex flex-wrap items-center justify-center gap-4 mt-6 lg:gap-6 lg:mt-0">
-            <a href="#" className="text-sm text-gray-600 transition-colors duration-300 dark:text-gray-200 hover:text-blue-500 dark:hover:text-blue-400">
-                Home
-            </a>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          className="h-5 w-5"
+          viewBox="0 0 20 20"
+          fill="currentColor"
+        >
+          <path
+            fillRule="evenodd"
+            d="M14.707 12.707a1 1 0 01-1.414 0L10 9.414l-3.293 3.293a1 1 0 01-1.414-1.414l4-4a1 1 0 011.414 0l4 4a1 1 0 010 1.414z"
+            clipRule="evenodd"
+          />
+        </svg>
+      </a>
+    </div>
 
-            <a href="#" className="text-sm text-gray-600 transition-colors duration-300 dark:text-gray-200 hover:text-blue-500 dark:hover:text-blue-400">
-                Notice
-            </a>
-
-            <a href="#" className="text-sm text-gray-600 transition-colors duration-300 dark:text-gray-200 hover:text-blue-500 dark:hover:text-blue-400">
-                Teachers
-            </a>
-
-            <a href="#" className="text-sm text-gray-600 transition-colors duration-300 dark:text-gray-200 hover:text-blue-500 dark:hover:text-blue-400">
-                Students
-            </a>
-
-            <a href="#" className="text-sm text-gray-600 transition-colors duration-300 dark:text-gray-200 hover:text-blue-500 dark:hover:text-blue-400">
-                Administration
-            </a>
-           
+    <div className="lg:flex lg:items-end lg:justify-between">
+      <div>
+        <div className="flex justify-center text-teal-600 lg:justify-start">
+         <img src="/iulogo.png" className='w-24' alt=""  />
         </div>
 
+        <p
+          className="mx-auto mt-6 max-w-md text-center leading-relaxed text-gray-500 lg:text-left"
+        >
+          The Islamic University Laboratory School and College (IULSC) is an educational institution located in Kushtia, Bangladesh. 
+        </p>
+      </div>
+
+      <ul
+        className="mt-12 flex flex-wrap justify-center gap-6 md:gap-8 lg:mt-0 lg:justify-end lg:gap-12"
+      >
+        <li>
+          <a className="text-gray-700 transition hover:text-gray-700/75" href="/">
+            Home
+          </a>
+        </li>
+
+        <li>
+          <a className="text-gray-700 transition hover:text-gray-700/75" href="/notice">
+            Notice
+          </a>
+        </li>
+
+        <li>
+          <a className="text-gray-700 transition hover:text-gray-700/75" href="/teachers">
+            Teachers
+          </a>
+        </li>
+
+        <li>
+          <a className="text-gray-700 transition hover:text-gray-700/75" href="/students">
+            Students
+          </a>
+        </li>
+      </ul>
     </div>
-    <div className='flex justify-center mb-4'>
-        <p className="mt-6 text-sm text-center text-gray-500 lg:mt-0 dark:text-gray-400">© Copyright 2023. Design and Developed by ICT department, IU</p>
-    </div>
+
+    <p className="mt-12 text-center text-sm text-gray-500 lg:text-right">
+      Copyright &copy; 2023. Developed and design by ICT department,IU
+    </p>
+  </div>
 </footer>
-        </div>
     </div>
   )
 }

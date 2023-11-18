@@ -22,6 +22,6 @@
       "@/*": ["./src/*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "next.config.js", "src/components/frontpage/teachercard.jsx", "src/app/page.tsx", "src/components/getdataSSR/frontPage.tsx", "src/components/frontpage/frontNotice.jsx", "src/app/layout.tsx", "src/components/frontpage/heroSection.tsx", "src/components/frontpage/otherWebLink.tsx", "src/components/frontpage/frontCarosel.jsx"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "next.config.js", "src/components/frontpage/teachercard.jsx", "src/app/page.tsx", "src/components/getdataSSR/frontPage.tsx", "src/components/frontpage/frontNotice.jsx", "src/app/layout.tsx", "src/components/frontpage/heroSection.tsx", "src/components/frontpage/otherWebLink.tsx", "src/components/frontpage/frontCarosel.jsx", "src/components/header1.tsx"],
   "exclude": ["node_modules"]
 }
