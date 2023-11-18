@@ -55,7 +55,7 @@ export default function Header() {
   return (
     <div className='mx-auto md:w-4/5 md:h-20  '>
 
-      <header className='sm:flex rounded-lg sm:pl-10 pl-5 flex justify-center  sm:justify-center py-3 px-4 border-2   shadow-md shadow-slate-300 '>
+      <header className='sm:flex rounded-lg sm:pl-10 pl-5 sm:h-14 flex justify-center  sm:justify-center py-3 px-4 border-2   shadow-md shadow-slate-300 '>
         <div className='flex items-center'>
 
           <Sheet>
@@ -76,7 +76,9 @@ export default function Header() {
                           <AiOutlineDown />
                         </span>
                       </button>
-                      <div className="absolute z-50 hidden  p-3 text-center bg-white  space-y-2 rounded-md shadow-md group-hover:block top-full left-0">
+                      <div className="absolute z-50 hidden  p-3  text-center bg-white  space-y-2 rounded-md shadow-md group-hover:block top-full left-0">
+                        <div className='flex flex-col gap-3'>
+
                         {
                           route.sub.map((sub: any, i: any) => (
                             <a key={i} href={`/${sub}`} className={url === route.path[i] ? "border-b-2 border-b-red-700   dark:bg-slate-700  " : "" + `text-sm hover:border-b-2  hover:border-b-red-700 dark:hover:bg-slate-700 px-5  hover:text-base transition-all duration-200`}>
@@ -84,6 +86,7 @@ export default function Header() {
                             </a>
                           ))
                         }
+                        </div>
 
                       </div>
 
@@ -127,6 +130,7 @@ export default function Header() {
                         </span>
                       </button>
                       <div className="absolute z-50 hidden  p-3 text-center bg-white  space-y-2 rounded-md shadow-md group-hover:block top-full right-0">
+                        <div className='flex flex-col gap-3'>
                         {
                           route.sub.map((sub: any, i: any) => (
                             <a key={i} href={`/${sub}`} className={url === route.path[i] ? "border-b-2 border-b-red-700   dark:bg-slate-700  " : "" + `text-sm hover:border-b-2  hover:border-b-red-700 dark:hover:bg-slate-700 px-5  hover:text-base transition-all duration-200`}>
@@ -134,6 +138,7 @@ export default function Header() {
                             </a>
                           ))
                         }
+                        </div>
 
                       </div>
 
