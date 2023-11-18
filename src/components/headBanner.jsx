@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import React from 'react'
 
 export default function HeadBanner() {
@@ -9,11 +10,11 @@ export default function HeadBanner() {
       <div className="text-center w-full flex justify-between sm:text-left">
         <a href="/">
 
-        <img src="iulogo.png" alt="" className=' w-20 border-4 ml-2 md:ml-10' />
+        <img src="/iulogo.png" alt="" className=' w-20 border-4 ml-2 md:ml-10' />
         </a>
-        <img src="mujib.png" alt="" className=' w-28 hidden md:block  ml-2 md:ml-10' />
+        <img src="/mujib.png" alt="" className=' w-28 hidden md:block  ml-2 md:ml-10' />
         
-            <img src="iusc.png" className='w-80 h-20 mr-2 md:mr-10 hidden md:block' alt="" />
+            <img src="/iusc.png" className='w-80 h-20 mr-2 md:mr-10 hidden md:block' alt="" />
             <div className='w-60 flex  flex-col justify-center  md:hidden'>
                 <h1 className='text-lg text-white'>
                 ISLAMIC UNIVERSITY 
