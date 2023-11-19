@@ -1,6 +1,7 @@
 // "use client"
 import { Button } from '@/components/ui/button';
 import axios from 'axios'
+import Image from 'next/image';
 import React, { useEffect, useState } from 'react'
 
 
@@ -82,7 +83,7 @@ const ClassRoutineSection=async()=> {
                                                                    <a href={image} className="">Download Pdf</a>
                                                                 </Button>
                                                                 :
-                                                                <img src={image} className="my-6" alt="" />
+                                                                <Image height={700} width={700} src={image} className="my-6" alt="" />
                                                                 }
                                                             </div>
                                                         ))}

@@ -2,6 +2,7 @@
 import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import "@/components/frontpage/App.css";
+import Image from "next/image";
 
 const images = [
   "iuSchool.jpg",
@@ -15,7 +16,7 @@ export default function FrontCarosel() {
       <Carousel className="" on showStatus={false} autoPlay={true} infiniteLoop={true} interval={4000} >
         {images.map((URL, index) => (
           <div key={index} className="slide  ">
-            <img alt="sample_file" id="img" src={URL} key={index} />
+            <Image width={2000} height={2000} alt="sample_file" id="img" src={ "/"+URL} key={index} />
           </div>
         ))}
       </Carousel>

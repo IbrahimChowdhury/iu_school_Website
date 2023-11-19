@@ -6,8 +6,10 @@ import { ThemeProvider } from "@/components/ThemeProvider";
 import Header1 from "@/components/header1"
 import HeadBanner from "@/components/headBanner"
 import Divider from "@/components/divider"
+
+
 export const metadata  = {
-  metadataBase: new URL("https://www.iulabsc.com"),
+  
   title: "Islamic University Laboratory School and college",
   description: 'Islamic University Laboratory School and College is one of the most renowed school in Kushtia',
   applicationName:"islamic University School and College",
@@ -36,12 +38,7 @@ export const metadata  = {
   authors: [{ name: 'ibrahim' }, { name: 'ibrahim Chowdhury', url: 'https://nextjs.org' }],
   creator: 'Ibrahim chowdhury',
   publisher: 'Ibrahim chowdhury',
-  alternates: {
-    canonical: '/',
-    languages: {
-      'en-US': '/en-US',
-    },
-  },
+  
 }
 
 export default function RootLayout({

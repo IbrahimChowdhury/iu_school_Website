@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import React from 'react'
 
 export default function Footer() {
@@ -32,7 +33,7 @@ export default function Footer() {
     <div className="lg:flex lg:items-end lg:justify-between">
       <div>
         <div className="flex justify-center text-teal-600 lg:justify-start">
-         <img src="/iulogo.png" className='w-24' alt=""  />
+         <Image height={400} width={400} src="/iulogo.png" className='w-24' alt=""  />
         </div>
 
         <p

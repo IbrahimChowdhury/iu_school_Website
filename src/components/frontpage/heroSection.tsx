@@ -1,8 +1,7 @@
 import Image from 'next/image'
 import React from 'react'
 import image from "@/../public/iuSchool.jpg"
-// import img from "@/../public/iuSchool.jpg"
-// bg-[url("/iuSchool2.jpg")]
+
 import {format} from "date-fns"
  export default function HeroSection() {
   return (

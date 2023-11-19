@@ -25,6 +25,8 @@ import {
     TableRow,
 } from "@/components/ui/table"
 import Link from 'next/link'
+import Image from "next/image"
+import { Divide } from "lucide-react"
 
 const getStudentsData=async()=>{
     try {
@@ -85,25 +87,27 @@ const StudentsList=async()=> {
     {
 
         return (
-            <div className="m-4 sm:mx-72 my-24">
+<div className=" py-8">
+
+            <div className="m-4 sm:mx-72 my-12">
                 <h1 className="text-center text-3xl font-bold mb-5 ">
                     All Students List
                 </h1>
                 <div>
-                    <Table className="text-center">
+                    <Table className="text-center  border-black">
                         <TableCaption>A list of Recent Students.</TableCaption>
-                        <TableHeader className="border-t-2">
+                        <TableHeader className="border-t-2  border-black">
                             <TableRow className="text-xl ">
-                                <TableHead className="border-2 text-center">Class</TableHead>
-                                <TableHead className="border-2  text-center">Section A</TableHead>
+                                <TableHead className="border-2  border-black text-center">Class</TableHead>
+                                <TableHead className="border-2  border-black text-center">Section A</TableHead>
     
                             </TableRow>
                         </TableHeader>
                         <TableBody>
                             {allNotices.map((notice: any, i: any) => (
                                 <TableRow key={i}>
-                                    <TableCell className="font-medium border-2 sm:text-base">{notice?.title}</TableCell>
-                                    <TableCell className='border-2 '>
+                                    <TableCell className="font-medium border-2  border-black sm:text-base">{notice?.title}</TableCell>
+                                    <TableCell className='border-2  border-black '>
                                         <Dialog>
                                             <DialogTrigger asChild> 
                                                 <p className="hover:text-lg  transition-all duration-200 hover:cursor-pointer"> A</p>
@@ -126,7 +130,7 @@ const StudentsList=async()=> {
                                                                     <a href={image} className="">Download Pdf</a>
                                                                 </Button>
                                                                 :
-                                                                <img src={image} className="my-6" alt="" />
+                                                                <Image height={1000} width={1000} src={image} className="my-6" alt="" />
                                                                                             }
                                                             </div>
                                                         ))}
@@ -184,6 +188,7 @@ const StudentsList=async()=> {
                 <Button asChild><a href="/notice">See more Notices</a></Button>
                 </div> */}
             </div>
+</div>
         )
     }
 

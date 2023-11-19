@@ -24,6 +24,7 @@ import {
     TableRow,
 } from "@/components/ui/table"
 import Link from 'next/link'
+import Image from "next/image"
 
 const getNoticeData=async()=>{
     try {
@@ -92,9 +93,10 @@ try {
                    
                             {allNotices.map((notice: any, i: any) => (
                                  <Dialog>
-                                 <DialogTrigger className="" asChild>
+                                    <div className=" flex justify-center">
+                                 <DialogTrigger className="w-full md:w-1/2" asChild>
                                      <div className="w-full flex justify-center">
-                                         <div className="flex w-full md:w-1/2 md:m-4 my-3 items-center justify-center">
+                                         <div className="flex w-full md:m-4 my-3 items-center justify-center">
                                              <div className="group w-full  flex items-center justify-start gap-5 rounded-lg border-2 p-2 bg-white transition-all duration-500 hover:cursor-pointer hover:bg-gradient-to-l hover:from-green-600 hover:to-slate-500">
                                                  <div className="relative flex w-20 transform flex-col items-center rounded-lg border-2 bg-green-700 p-1 text-white shadow-md transition-all duration-500 group-hover:-translate-x-10 group-hover:bg-white group-hover:text-black group-hover:shadow-green-500" >
                                                      <h1 className="text-2xl font-bold">{format(new Date(notice?.date),'dd')}</h1>
@@ -108,6 +110,7 @@ try {
                                          </div>
                                      </div>
                                  </DialogTrigger>
+                                    </div>
                                  <DialogContent className="w-5/6 sm:max-w-[700px] ">
                                      <DialogHeader>
                                          <DialogTitle>{notice?.title}</DialogTitle>
@@ -126,7 +129,7 @@ try {
                                                              <a href={image} className="">Download Pdf</a>
                                                          </Button>
                                                          :
-                                                         <img src={image} className="my-6" alt="Image" />
+                                                         <Image height={1000} width={1000} src={image} className="my-6" alt="Image" />
                                                      }
                                                  </div>
                                              ))}
