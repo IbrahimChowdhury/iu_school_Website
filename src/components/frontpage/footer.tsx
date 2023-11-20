@@ -8,36 +8,16 @@ export default function Footer() {
   <div
     className="relative mx-auto max-w-screen-xl px-4 py-4 sm:px-6 lg:px-8 lg:pt-5"
   >
-    <div className="absolute end-4 top-4 sm:end-6 sm:top-6 lg:end-8 lg:top-8">
-      <a
-        className="inline-block rounded-full bg-teal-600 p-2 text-white shadow transition hover:bg-teal-500 sm:p-3 lg:p-4"
-        href="#headbanner"
-      >
-        <span className="sr-only">Back to top</span>
+   
 
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          className="h-5 w-5"
-          viewBox="0 0 20 20"
-          fill="currentColor"
-        >
-          <path
-            fillRule="evenodd"
-            d="M14.707 12.707a1 1 0 01-1.414 0L10 9.414l-3.293 3.293a1 1 0 01-1.414-1.414l4-4a1 1 0 011.414 0l4 4a1 1 0 010 1.414z"
-            clipRule="evenodd"
-          />
-        </svg>
-      </a>
-    </div>
-
-    <div className="lg:flex lg:items-end lg:justify-between">
-      <div>
+    <div className="lg:flex lg:items-center lg:justify-between">
+      <div  className='flex flex-col lg:flex-row lg:gap-3 '>
         <div className="flex justify-center text-teal-600 lg:justify-start">
          <Image height={400} width={400} src="/iulogo.png" className='w-24' alt=""  />
         </div>
 
         <p
-          className="mx-auto mt-6 max-w-md text-center leading-relaxed text-gray-500 lg:text-left"
+          className="mx-auto mt-6 max-w-md  text-gray-500 lg:text-left"
         >
           The Islamic University Laboratory School and College (IULSC) is an educational institution located in Kushtia, Bangladesh. 
         </p>
@@ -72,7 +52,7 @@ export default function Footer() {
       </ul>
     </div>
 
-    <p className="mt-12 text-center text-sm text-gray-500 lg:text-right">
+    <p className="mt-3 text-center text-sm text-gray-500 lg:text-center">
       Copyright &copy; 2023. Developed and design by ICT department,IU
     </p>
   </div>

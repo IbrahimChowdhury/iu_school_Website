@@ -23,6 +23,7 @@ import {
 } from "@/components/ui/alert-dialog"
 import { Button } from "@/components/ui/button"
 import Link from 'next/link'
+import { format } from 'date-fns'
 export default function GetAllNotice() {
 
     const [allNotices, setallNotices] = useState([])
@@ -69,8 +70,8 @@ export default function GetAllNotice() {
                     <TableBody>
                         {allNotices.map((notice: any, i) => (
                             <TableRow key={i}>
-                                <TableCell className="font-medium ">{notice?.date.slice(0, 7)}-{parseInt(notice?.date.slice(8,10)) +1}</TableCell>
-                                <TableCell className='h-24 line-clamp-1'>{notice?.title}</TableCell>
+                                <TableCell className="font-medium ">{format(new Date(notice?.date), "dd MMM, yyyy")}</TableCell>
+                                <TableCell className='h-24 line-clamp-1 flex items-center'>{notice?.title}</TableCell>
                                 <TableCell><Button><Link href={`/admin/notice/${notice?._id}`}>Edit</Link></Button></TableCell>
                                 {/* <TableCell className="text-right"><Button onClick={()=>deleteNotice(notice._id)}>Delete</Button></TableCell> */}
                                 <TableCell className="text-right">

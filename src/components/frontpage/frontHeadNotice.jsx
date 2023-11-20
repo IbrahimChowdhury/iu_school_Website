@@ -1,44 +1,50 @@
-"use client"
-import React, { useEffect, useState } from 'react'
+// "use client"
 import {AiOutlineRocket} from "react-icons/ai"
 import {
   Alert,
   AlertDescription,
   AlertTitle,
 } from "@/components/ui/alert"
-export  function FrontHeadNotice() {
-  const [allNotices, setallNotices] = useState([])
 
-  useEffect(() => {
-      getNotices()
-  }, [])
 
-  let getNotices = async () => {
-      try {
-          let response = await axios.get("/api/class")
-          console.log(response)
-          setallNotices(response.data)      
-      } catch (error) {
-          console.error("error getting class data",error)
+
+const getAllNotice = async () => {
+  try {
+      const response = await fetch(`${process.env.url}/api/class`, {
+          cache: "no-cache",
+      });
+      if (!response.ok) {
+          console.log("cannot fetch notice data")
+          throw new Error("failed to fetch front notice data")
+
       }
-
+      return response.json()
+  } catch (error) {
+      console.log(error.message)
   }
+}
+
+
+
+const  FrontHeadNotice=async()=> {
+let allNotices=await getAllNotice()
+
   let notice= allNotices[1];
-console.log(allNotices)
+// console.log(allNotices)
+if(notice){
   return (
-    <div>
-      {notice?.length>0 && (
-        <div>
-    <Alert>
-      <AiOutlineRocket className="h-4 w-4" />
-      <AlertTitle>Heads up!</AlertTitle>
-      <AlertDescription>
-        You can add components to your app using the cli.
-      </AlertDescription>
-    </Alert>
+    <div className="text-black  w-full">
+      
+        <div className=" w-full " >
+            {/* <div  className="animate-leftToRightMovingText w-full whitespace-nowrap " >{notice?.body} </div> */}
+            <marquee behavior="scroll" width="100%"   direction="left" className="">{notice?.body}</marquee>
         </div>
-      )}
+  
  
     </div>
   )
 }
+}
+
+
+export default FrontHeadNotice;

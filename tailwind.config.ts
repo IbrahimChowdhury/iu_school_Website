@@ -69,10 +69,25 @@ module.exports = {
           from: { height: "var(--radix-accordion-content-height)" },
           to: { height: 0 },
         },
+          "leftToRightMovingText": {
+          '0%': { transform: 'translateX(-100%)' },
+          '100%': { transform: 'translateX(100%)' },
+        },
+        'leftToRightMovingText-paused': {
+          '0%': { transform: 'translateX(-100%)' },
+          '100%': { transform: 'translateX(100%)' },
+        },
+          "RightToLefttMovingText": {
+          '0%': { transform: 'translateX(100%)' },
+          '100%': { transform: 'translateX(-100%)' },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
+        "leftToRightMovingText" : "leftToRightMovingText  15s   infinite",
+        
+        "RightToLefttMovingText" : "RightToLefttMovingText  15s   infinite",
       },
     },
   },

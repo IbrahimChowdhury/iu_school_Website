@@ -24,9 +24,9 @@ let route = [
     sub: []
   },
   {
-    path: ['/notice'],
-    label: "Notice",
-    sub: []
+    path: ["/ClassRoutine"],
+    label: "Academic",
+    sub: ["ClassRoutine",]
   },
   {
     path: ['/teachers'],
@@ -39,10 +39,10 @@ let route = [
     sub: []
   },
   {
-    path: ["/ClassRoutine"],
-    label: "Academic",
-    sub: ["ClassRoutine",]
-  }
+    path: ['/notice'],
+    label: "Notice",
+    sub: []
+  },
 
 ]
 
@@ -53,7 +53,7 @@ export default function Header() {
 
 
   return (
-    <div className='mx-auto md:w-4/5 md:h-20  '>
+    <div className='mx-auto md:w-4/5 md:h-16  '>
 
       <header className='sm:flex rounded-lg sm:pl-10 pl-5 sm:h-14 flex justify-center  sm:justify-center py-3 px-4 border-2   shadow-md shadow-slate-300 '>
         <div className='flex items-center'>

@@ -1,3 +1,4 @@
+import FrontHeadNotice from '@/components/frontpage/frontHeadNotice'
 import StudentsList from '@/components/getdataSSR/StudentsSection'
 import { Metadata } from 'next'
 import React from 'react'
