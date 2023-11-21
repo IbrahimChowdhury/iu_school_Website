@@ -84,7 +84,7 @@ const FrontNotice = async () => {
                                                 {image.split('.').pop()?.toLowerCase() === "pdf" ?
                                                     <Button className="mt-10" asChild>
 
-                                                        <a href={image} className="">Download Pdf</a>
+                                                        <a href={image.replace("http://","https://")} className="">Download Pdf</a>
                                                     </Button>
                                                     :
                                                     
