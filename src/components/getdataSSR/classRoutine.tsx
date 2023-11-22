@@ -80,7 +80,7 @@ const ClassRoutineSection=async()=> {
                                                             <div key={i}>
                                                                 {   image.split('.').pop()?.toLowerCase() === "pdf"? 
                                                                 <Button className="mt-10" asChild>
-                                                                   <a href={image} className="">Download Pdf</a>
+                                               <a href={image.replace("http://","https://")} className="">Download Pdf</a>
                                                                 </Button>
                                                                 :
                                                                 <Image height={700} width={700} src={image} className="my-6" alt="" />

@@ -43,8 +43,8 @@ const FrontNotice = async () => {
         }
         const notices = [allNotices[0], allNotices[1], allNotices[2], allNotices[3], allNotices[4]]
         return (
-            <div className="w-full bg-gradient-to-l from-slate-200 to-orange-50 py-7 px-2">
-                <h1 className="text-center text-3xl font-bold mb-3 ">
+            <div className="w-full px-2 lg:px-20 bg-gradient-to-l from-slate-200 to-orange-50 py-7">
+                <h1 className="mb-3 text-3xl font-bold text-center ">
                     Recent Notice List
                 </h1>
                 <div>
@@ -52,11 +52,11 @@ const FrontNotice = async () => {
                     {notices.map((notice, i) => (
                         <Dialog>
                             <div className="flex justify-center">
-                            <DialogTrigger className="w-full md:w-1/2" asChild>
-                                <div className="w-full flex justify-center">
-                                    <div className="flex w-full  md:m-4 my-3 items-center justify-center">
-                                        <div className="group w-full  flex items-center justify-start gap-5 rounded-lg border-2 p-2 bg-white transition-all duration-500 hover:cursor-pointer hover:bg-gradient-to-l hover:from-green-600 hover:to-slate-500">
-                                            <div className="relative flex w-20 transform flex-col items-center rounded-lg border-2 bg-green-700 p-1 text-white shadow-md transition-all duration-500 group-hover:-translate-x-10 group-hover:bg-white group-hover:text-black group-hover:shadow-green-500" >
+                            <DialogTrigger className="w-full " asChild>
+                                <div className="flex justify-center w-full">
+                                    <div className="flex items-center justify-center w-full my-3 md:m-4">
+                                        <div className="flex items-center justify-start w-full gap-5 p-2 transition-all duration-500 bg-white border-2 rounded-lg group hover:cursor-pointer hover:bg-gradient-to-l hover:from-green-600 hover:to-slate-500">
+                                            <div className="relative flex flex-col items-center w-20 p-1 text-white transition-all duration-500 transform bg-green-700 border-2 rounded-lg shadow-md group-hover:-translate-x-10 group-hover:bg-white group-hover:text-black group-hover:shadow-green-500" >
                                                 <h1 className="text-2xl font-bold">{format(new Date(notice?.date),'dd')}</h1>
                                                 <h2>{format(new Date(notice?.date),'MMM yy')}</h2>
                                             </div>
@@ -107,7 +107,7 @@ const FrontNotice = async () => {
 
 
                 </div>
-                <div className="text-center mt-5">
+                <div className="mt-5 text-center">
                     <Button className="transition-all duration-300 hover:translate-x-2" asChild><a href="/notice">See more Notices</a></Button>
                 </div>
             </div>

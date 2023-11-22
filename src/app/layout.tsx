@@ -1,5 +1,7 @@
 import Header from '@/components/header'
 import './globals.css'
+
+
 import Footer from '@/components/frontpage/footer'
 import { Metadata } from 'next'
 import { ThemeProvider } from "@/components/ThemeProvider";

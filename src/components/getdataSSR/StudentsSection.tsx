@@ -127,8 +127,8 @@ const StudentsList=async()=> {
                                                                 {   image.split('.').pop()?.toLowerCase() === "pdf"? 
                                                                 <Button className="mt-10" asChild>
     
-                                                                    <a href={image} className="">Download Pdf</a>
-                                                                </Button>
+                                        <a href={image.replace("http://","https://")} className="">Download Pdf</a>
+                                                                    </Button>
                                                                 :
                                                                 <Image height={1000} width={1000} src={image} className="my-6" alt="" />
                                                                                             }
