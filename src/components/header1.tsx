@@ -26,7 +26,7 @@ let route = [
   {
     path: ["/ClassRoutine"],
     label: "Academic",
-    sub: ["ClassRoutine",]
+    sub: ["Class Routine",]
   },
   {
     path: ['/teachers'],
@@ -53,14 +53,14 @@ export default function Header() {
 
 
   return (
-    <div className='mx-auto md:w-4/5 md:h-16  '>
+    <div className='mx-auto md:w-4/5 md:h-16 '>
 
-      <header className='sm:flex rounded-lg sm:pl-10 pl-5 sm:h-14 flex justify-center  sm:justify-center py-3 px-4 border-2   shadow-md shadow-slate-300 '>
+      <header className='flex justify-center px-4 py-3 pl-5 border-2 rounded-lg shadow-md sm:flex sm:pl-10 sm:h-14 sm:justify-center shadow-slate-300 '>
         <div className='flex items-center'>
 
           <Sheet>
             <SheetTrigger>
-              <Menu className="h-6 md:hidden w-6" />
+              <Menu className="w-6 h-6 md:hidden" />
             </SheetTrigger>
             <SheetContent side="left" className="w-[300px] sm:w-[400px]">
               <nav className="flex flex-col gap-4">
@@ -68,15 +68,15 @@ export default function Header() {
                   <div key={i}>
                     {route?.sub?.length > 0 ?
                     <div>
-                    <div className="relative group inline-block">
+                    <div className="relative inline-block group">
 
-                      <button className='text-black group flex text-sm   font-semibold  hover:text-base  items-center gap-2 transition-all duration-300 focus:outline-none '>
+                      <button className='flex items-center gap-2 text-sm font-semibold text-black transition-all duration-300 group hover:text-base focus:outline-none '>
                         {route.label}
                         <span className="transition-all duration-300 group-hover:rotate-180">
                           <AiOutlineDown />
                         </span>
                       </button>
-                      <div className="absolute z-50 hidden  p-3  text-center bg-white  space-y-2 rounded-md shadow-md group-hover:block top-full left-0">
+                      <div className="absolute left-0 z-50 hidden p-3 space-y-2 text-center bg-white rounded-md shadow-md group-hover:block top-full">
                         <div className='flex flex-col gap-3'>
 
                         {
@@ -115,22 +115,22 @@ export default function Header() {
 
         </div>
 
-        <nav className='mx-6 items-center  space-x-4 lg:space-x-6 hidden md:block'>
-          <div className='flex gap-7 items-center transition-all duration-700'>
+        <nav className='items-center hidden mx-6 space-x-4 lg:space-x-6 md:block'>
+          <div className='flex items-center transition-all duration-700 gap-7'>
             {route.map((route, i) => (
               <div key={i}>
                 {route?.sub?.length > 0 ?
                   <div>
-                    <div className="relative group inline-block">
+                    <div className="relative inline-block group">
 
-                      <button className='text-black group flex text-sm   font-semibold  hover:text-base hover:border-b-2 hover:border-b-red-700  items-center gap-2 transition-all duration-300 focus:outline-none '>
+                      <button className='flex items-center gap-2 text-sm font-semibold text-black transition-all duration-300 group hover:text-base hover:border-b-2 hover:border-b-red-700 focus:outline-none '>
                         {route.label}
                         <span className="transition-all duration-300 group-hover:rotate-180">
                           <AiOutlineDown />
                         </span>
                       </button>
-                      <div className="absolute z-50 hidden  p-3 text-center bg-white  space-y-2 rounded-md shadow-md group-hover:block top-full right-0">
-                        <div className='flex flex-col gap-3'>
+                      <div className="absolute right-0 z-50 hidden p-3 space-y-2 text-center bg-white rounded-md shadow-md group-hover:block top-full">
+                        <div className='flex flex-col gap-3 w-44'>
                         {
                           route.sub.map((sub: any, i: any) => (
                             <a key={i} href={`/${sub}`} className={url === route.path[i] ? "border-b-2 border-b-red-700   dark:bg-slate-700  " : "" + `text-sm hover:border-b-2  hover:border-b-red-700 dark:hover:bg-slate-700 px-5  hover:text-base transition-all duration-200`}>
@@ -165,8 +165,8 @@ export default function Header() {
           className='mr-6'
           onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
         >
-          <Sun className="h-6 w-6 rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
-          <Moon className="absolute h-6 w-6 rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
+          <Sun className="w-6 h-6 transition-all scale-100 rotate-0 dark:-rotate-90 dark:scale-0" />
+          <Moon className="absolute w-6 h-6 transition-all scale-0 rotate-90 dark:rotate-0 dark:scale-100" />
           <span className="sr-only">Toggle Theme</span>
 
         </Button> */}

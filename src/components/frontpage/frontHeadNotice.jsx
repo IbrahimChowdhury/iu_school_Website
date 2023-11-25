@@ -33,10 +33,10 @@ let allNotices=await getAllNotice()
 // console.log(allNotices)
 if(notice){
   return (
-    <div className="text-black  w-full">
+    <div className="w-full text-black">
       
-        <div className=" w-full " >
-            {/* <div  className="animate-leftToRightMovingText w-full whitespace-nowrap " >{notice?.body} </div> */}
+        <div className="w-full pt-2 text-lg " >
+            {/* <div  className="w-full animate-leftToRightMovingText whitespace-nowrap " >{notice?.body} </div> */}
             <marquee behavior="scroll" width="100%"   direction="left" className="">{notice?.body}</marquee>
         </div>
   

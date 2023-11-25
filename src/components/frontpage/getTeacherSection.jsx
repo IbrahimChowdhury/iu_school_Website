@@ -52,33 +52,71 @@ const GetTeacherSection = async () => {
 
     return (
       <div className='w-full'>
+
+        {/* iir main teacher speech section  */}
+          <section className="py-5 bg-gradient-to-l from-lime-50 to-slate-200 dark:bg-gray-800 dark:text-gray-100">
+            <div className="flex flex-col-reverse items-center justify-center w-3/4 mx-auto lg:py-10 lg:flex-row-reverse lg:justify-between">
+              <div className="flex flex-col justify-center text-center rounded-sm md:p-6 xl:max-w-lg lg:text-left">
+                <h1 className="text-3xl font-bold leadi sm:text-4xl">
+                  Chairperson's Speech
+                </h1>
+                <div className="mt-6 text-lg text-justify sm:mb-12">
+                Esteemed students, parents, and distinguished guests, As the Professor of the English Department, Director of IIER, and Chairperson of Islamic University School and College, I stand before you with immense pride. Our academic community is a beacon of knowledge, fostering values that extend beyond textbooks. Embrace curiosity, question the norm, and contribute to the global discourse. Together, let's tread the path of wisdom, guided by Islamic principles, towards a future where your intellect shapes a compassionate and enlightened society.
+          <br /> <br />
+          <h1 className='font-semibold'>
+            Professor Dr. Md. Mamunur Rahman
+            </h1>
+            <h1>
+   Chairperson of the Governing Body 
+            </h1>
+
+
+                </div>
+              </div>
+              <div className="relative justify-center mt-5 w-72 md:w-1/3 md:pl-12 h-80 lg:mt-0 md:h-96 ">
+                {/* <Image height={500} width={500}  src={first?.imageLinks[0]} alt="" className="object-contain h-48 rounded-xl sm:h-80 lg:h-96 xl:h-112 2xl:h-128" /> */}
+                <Image fill src={"/chair.jpg"} alt="" className="absolute object-contain rounded-lg h-80 md:h-96" />
+              </div>
+            </div>
+          </section>
+
+          
         <div>
 
-          <div className="py-7 flex bg-gradient-to-r w-full p-10  from-green-50 to-slate-300 sm:flex-row  gap-3 flex-col   justify-center items-center">
+        {/* front teacher section */}
+          {/* <div className="flex flex-col items-center justify-center w-full gap-3 p-10 py-7 bg-gradient-to-r from-green-50 to-slate-300 sm:flex-row">
 
-            <TeacherCard imageLink={first?.imageLinks[0]} title={first?.title} body={first?.name} />
-            <TeacherCard imageLink={second?.imageLinks[0]} title={second?.title} body={second?.name} />
+            <TeacherCard imageLink={first?.imageLinks[0]} title={first?.title} body={first?.name} id={first} />
+            <TeacherCard imageLink={second?.imageLinks[0]} title={second?.title} body={second?.name}   />
 
             <div>
             </div>
-          </div>
+          </div> */}
 
-          <section className=" py-5 bg-gradient-to-l  from-lime-50 to-slate-200 dark:bg-gray-800 dark:text-gray-100">
-            <div className=" w-3/4 flex flex-col justify-center items-center  mx-auto  lg:py-10 lg:flex-row lg:justify-between">
-              <div className="flex flex-col justify-center md:p-6 text-center rounded-sm  xl:max-w-lg lg:text-left">
+      {/* Head Teacher Speech section */}
+
+          <section className="py-5 bg-gradient-to-l from-orange-100 to-slate-200 dark:bg-gray-800 dark:text-gray-100">
+            <div className="flex flex-col items-center justify-center w-3/4 mx-auto lg:py-10 lg:flex-row lg:justify-between">
+              <div className="flex flex-col justify-center text-center rounded-sm md:p-6 xl:max-w-lg lg:text-left">
                 <h1 className="text-3xl font-bold leadi sm:text-4xl">
-                  Speech Of Head Teacher
+                  Head Teacher's Speech
                 </h1>
-                <p className="mt-6 text-justify text-lg sm:mb-12">
-                ইসলামী বিশ্ববিদ্যালয় ল্যাবরেটরি স্কুল এন্ড কলেজটি বিশ্ববিদ্যালয় কর্তৃক পরিচালিত একটি শিক্ষা প্রতিষ্ঠান। ১৯৯৬ সাল থেকে প্রতিষ্ঠানটি সুনামের সাথে অত্র এলাকায় শিক্ষার আলো ছড়িয়ে যাচ্ছে। ইতোমধ্যে প্রতিষ্ঠানটি তার স্বকীয় মহিমায় সমুজ্জ্বল হয়ে উঠেছে। প্রতিষ্ঠানটি পাবলিক পরীক্ষাসহ খেলাধুলা ও অন্যান্য সহপাঠ্য কার্যক্রমে যথেষ্ট সুনাম অর্জন করতে সক্ষম হয়েছে। আমি দৃঢ়ভাবে বিশ্বাস করি শিক্ষার্থী, শিক্ষক, অভিভাবক বিশ্ববিদ্যালয় প্রশাসনের সমন্বিত প্রচেষ্টায় অচিরেই যশোর শিক্ষা বোর্ডের একটি খ্যাতিমান শিক্ষা প্রতিষ্ঠানে পরিণত হবে। আমি এ শিক্ষা প্রতিষ্ঠানের উত্তরোত্তর সমৃদ্ধি ও সাফল্য কামনা করি।
-          <br /> <br />মুহ: মুজাম্মিল হক মোল্লাহ 
-<br />প্রধান শিক্ষক (ভারপ্রাপ্ত)। 
+                <div className="mt-6 text-lg text-justify sm:mb-12">
+                Islamic University Laboratory School and College is an educational institution run by the University Authority. Since 1996, the institution has been spreading the light of education in the area with its reputation. Already the institution has become resplendent in its own glory. The institution has been able to gain considerable reputation in sports and other co-curricular activities along with public examinations. I strongly believe that with the concerted efforts of the students, teachers, parents, the university administration will soon become a reputed educational institution of Jessore Education Board. I wish the future prosperity and success of this educational institution.
+                
+          <br /> <br />
+          <h1 className='font-semibold'>
+            Md. Mozammel Hoque Mollah
+            </h1>
 
-                </p>
+Head Teacher (In-charge)
+
+
+                </div>
               </div>
-              <div className="relative justify-center w-72 md:w-1/3 md:pl-12 h-80 lg:mt-0  md:h-96 ">
-                {/* <Image height={500} width={500}  src={first?.imageLinks[0]} alt="" className="object-contain rounded-xl h-48 sm:h-80 lg:h-96 xl:h-112 2xl:h-128" /> */}
-                <Image height={400} width={400} src={first?.imageLinks[0]} alt="" className="absolute object-contain rounded-xl h-80   md:h-96 " />
+              <div className="relative justify-center mt-5 w-72 md:w-1/3 md:pl-12 h-80 lg:mt-0 md:h-96 ">
+                {/* <Image height={500} width={500}  src={first?.imageLinks[0]} alt="" className="object-contain h-48 rounded-xl sm:h-80 lg:h-96 xl:h-112 2xl:h-128" /> */}
+                <Image fill src={first?.imageLinks[0]} alt="" className="absolute object-contain rounded-lg h-80 md:h-96" />
               </div>
             </div>
           </section>
