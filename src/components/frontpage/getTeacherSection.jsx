@@ -71,7 +71,7 @@ const GetTeacherSection = async () => {
             </h1>
 
 
-                </div>
+              </div>
               </div>
               <div className="relative justify-center mt-5 w-72 md:w-1/3 md:pl-12 h-80 lg:mt-0 md:h-96 ">
                 {/* <Image height={500} width={500}  src={first?.imageLinks[0]} alt="" className="object-contain h-48 rounded-xl sm:h-80 lg:h-96 xl:h-112 2xl:h-128" /> */}
