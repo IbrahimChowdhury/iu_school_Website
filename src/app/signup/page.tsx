@@ -57,3 +57,13 @@
 //     </div>
 //   )
 // }
+
+
+
+import React from 'react'
+
+export default function Page() {
+  return (
+    <div>Can not signUp as a admin</div>
+  )
+}
