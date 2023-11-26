@@ -59,7 +59,7 @@ const EditNotice: React.FC<EditNoticeProps> = ({ id, title: initialTitle, body: 
   return (
     <div>
       <div className="sm:w-[600px] mt-10 mx-10 flex flex-col justify-center bg-slate-100 shadow-lg border-2 p-4 rounded-lg dark:bg-slate-900">
-        <div className="text-center text-xl m-5">Update Notice</div>
+        <div className="m-5 text-xl text-center">Update Notice</div>
         <form onSubmit={editNotice}>
           <div className="grid gap-4 py-4">
             <div className="flex items-center gap-4">
@@ -84,8 +84,9 @@ const EditNotice: React.FC<EditNoticeProps> = ({ id, title: initialTitle, body: 
                 {imageLinks.map((image, i) => (
                   <div className="relative" key={i}>
                     <CldImage rel="preload" width={100} height={100} src={image} alt="image" />
-                    <span onClick={() => deleteImage(image)}>
-                      <AiOutlineDelete className="absolute text-white top-2 right-3" />
+                    <span className='absolute p-1 text-white rounded-md top-2 right-3 bg-slate-500 hover:cursor-pointer hover:bg-slate-800 ' onClick={() => deleteImage(image)}>
+                      <AiOutlineDelete className="" />
+                      
                     </span>
                   </div>
                 ))}

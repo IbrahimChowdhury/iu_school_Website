@@ -77,10 +77,10 @@ export default function Header() {
                         </span>
                       </button>
                       <div className="absolute left-0 z-50 hidden p-3 space-y-2 text-center bg-white rounded-md shadow-md group-hover:block top-full">
-                        <div className='flex flex-col gap-3'>
+                        <div className='flex flex-col items-center w-40 gap-3'>
                         {
                           route.sub.map((sub: any, i: any) => (
-                            <a key={i} href={route.path[i]} className={url === route.path[i] ? "border-b-2 border-b-red-700   dark:bg-slate-700  " : "" + `text-sm hover:border-b-2  hover:border-b-red-700 dark:hover:bg-slate-700 px-5  hover:text-base transition-all duration-200`}>
+                            <a key={i} href={route.path[i]} className={url === route.path[i] ? "border-b-2 border-b-red-700 w-[80%]  dark:bg-slate-700  " : "" + `text-sm border-b-2 hover:border-b-2  hover:border-b-red-700 dark:hover:bg-slate-700 w-[70%]  hover:text-base transition-all duration-200`}>
                               {sub}
                             </a>
                           ))

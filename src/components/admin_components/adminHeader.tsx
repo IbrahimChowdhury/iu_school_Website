@@ -25,7 +25,7 @@ let route=[
         path:'/admin/class',
         label:"Academic"
     },
-
+    
 ]
 
 function AdminHeader() {
@@ -49,8 +49,7 @@ function AdminHeader() {
             <div className='sm:hidden'>
             <Sheet>
               <SheetTrigger>
-               <h1 className='p-2 m-6 bg-black dark:bg-white rounded-lg 
-                text-white dark:text-black'>Admin Menu</h1>
+               <h1 className='p-2 m-6 text-white bg-black rounded-lg dark:bg-white dark:text-black'>Admin Menu</h1>
                 <Separator />
                 
               </SheetTrigger>
@@ -71,7 +70,7 @@ function AdminHeader() {
             </div>
         
             <nav className=' bg-slate-200 dark:bg-slate-900 w-[250px] min-h-screen max-h-max  content-between flex-col py-5 px-9 hidden  sm:block'>
-                <div className=' max-h-screen flex flex-col content-between '>
+                <div className='flex flex-col content-between max-h-screen '>
                   <div className='flex flex-col gap-4 '>
                 <h1 className='text-2xl'>Admin panel</h1>
                 <Button onClick={logout}>Logout</Button>

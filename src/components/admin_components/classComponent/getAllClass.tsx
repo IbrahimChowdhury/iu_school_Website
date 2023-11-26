@@ -61,7 +61,7 @@ export default function GetClassRoutine() {
 
     return (
         <div>
-        <div className='flex flex-col sm:flex-row flex-wrap gap-7 '>
+        <div className='flex flex-col flex-wrap sm:flex-row gap-7 '>
             {
                 allNotices.map((notice:any, i:any) => (
                     <div key={i} className="max-w-xs rounded-md shadow-md dark:bg-gray-900 dark:text-gray-100">
@@ -76,7 +76,7 @@ export default function GetClassRoutine() {
                             </div>
                            <div className='flex justify-between'>
                            <Button><Link href={`/admin/class/${notice?._id}`}>Update</Link></Button>
-                           <AlertDialog>
+                           {/* <AlertDialog>
                                     <AlertDialogTrigger asChild>
                                         <Button variant="outline">Delete</Button>
                                     </AlertDialogTrigger>
@@ -92,7 +92,7 @@ export default function GetClassRoutine() {
                                             <AlertDialogAction  onClick={()=>deleteNotice(notice._id)}  >Continue</AlertDialogAction>
                                         </AlertDialogFooter>
                                     </AlertDialogContent>
-                                </AlertDialog>
+                                </AlertDialog> */}
                            </div>
                         </div>
                     </div>

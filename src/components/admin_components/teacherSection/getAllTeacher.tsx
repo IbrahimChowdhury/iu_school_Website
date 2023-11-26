@@ -72,12 +72,12 @@ export default function GetAllTeachers() {
 
     return (
         <div>
-            <div className='flex flex-col sm:flex-row flex-wrap gap-7 '>
+            <div className='flex flex-col flex-wrap sm:flex-row gap-7 '>
                 {
                     allNotices.map((notice: any, i:any) => (
                         <div key={i} className="w-64 rounded-md shadow-md dark:bg-gray-900 dark:text-gray-100">
                             <div className='relative h-44'>
-                            <img src={notice.imageLinks[0]} alt="" className="absolute object-cover object-top w-full rounded-t-md h-44 dark:bg-gray-500" />
+                            <img src={notice.imageLinks[0]} alt="" className="absolute object-contain w-full rounded-t-md h-44 dark:bg-gray-500" />
                             </div>
 
                             <div className="flex flex-col justify-between p-6 space-y-8">

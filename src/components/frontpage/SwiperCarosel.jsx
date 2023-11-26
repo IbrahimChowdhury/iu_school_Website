@@ -45,7 +45,7 @@ import Image from 'next/image';
     >
         {images?.map((image, i)=>(
       <SwiperSlide key={i}  >
-        <div className='relative w-full lg:h-[600px] h-60 '>
+        <div className='relative w-full lg:h-[600px] xl:h-[80vh] h-60 '>
 
         {/* <img  className='absolute object-contain w-10 h-11 ' src={"/"+image} alt="" /> */}
         <Image

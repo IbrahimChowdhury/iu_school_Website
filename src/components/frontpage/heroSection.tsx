@@ -6,7 +6,7 @@ import {format} from "date-fns"
  export default function HeroSection() {
   return (
     <div>
-        <section className={`text-black bg-gradient-to-t from-slate-200 to-green-200 body-font  md:p-10`} >
+        <section className={`text-black bg-gradient-to-t from-slate-200 to-green-200 body-font mb-4  md:p-10`} >
   <div className="flex flex-col items-center justify-center px-5 py-10 mx-auto ">
     <div className="flex flex-col items-center justify-center w-full text-center lg:w-2/3">
       <h1 className="mb-4 text-3xl font-medium text-gray-900 dark:text-white title-font md:w-3/4 sm:text-4xl">Islamic University Laboratory School & College</h1>
