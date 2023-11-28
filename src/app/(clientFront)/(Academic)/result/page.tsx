@@ -3,9 +3,10 @@ import axios from 'axios'
 import Image from 'next/image';
 import { Metadata } from 'next'
 import React from 'react'
+
 export const metadata:Metadata={
-    title:"Class Routine",
-    description:"Class Routine from the students",  
+    title:"Students Result",
+    description:"Result of the students publish in this section",  
 }
 
 

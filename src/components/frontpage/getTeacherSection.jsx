@@ -9,6 +9,7 @@ const getTeacherData = async () => {
       cache: "no-cache",
     });
     if (!response.ok) {
+      console.log("not responding")
       throw new Error("failed to fetch teachers data")
     }
     return response.json()
@@ -39,16 +40,13 @@ const GetTeacherSection = async () => {
 
     // console.log(teacher);
 
-
     if (teacher.length === 0) {
       return <div>No teacher data available.</div>;
     }
 
 
     const first = teacher[0];
-    const second = teacher[1];
-
-    const third = teacher[2];
+ 
 
     return (
       <div className='w-full'>

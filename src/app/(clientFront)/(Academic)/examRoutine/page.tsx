@@ -4,8 +4,8 @@ import Image from 'next/image';
 import { Metadata } from 'next'
 import React from 'react'
 export const metadata:Metadata={
-    title:"Class Routine",
-    description:"Class Routine from the students",  
+    title:"Exam Routine",
+    description:"Exam Routine of the School",  
 }
 
 

@@ -64,7 +64,7 @@ const TeachersData = async ({ params }) => {
              <div  className=' container flex  flex-col  lg:flex-row-reverse lg:justify-evenly lg:items-center'>
 
 <div className='relative h-80 flex justify-center  lg:w-1/3 '>
-    <Image height={300} width={300} className='absolute object-contain w-[70%] lg:w-[60%]  rounded-xl' src={`${data?.imageLinks[0]}`} alt="" />
+    <Image height={300} width={300} className='absolute object-contain w-[70%] lg:w-[60%]  rounded-xl' src={`${data?.imageLinks[0]}`} alt="Teacher" />
 </div>
 
 <div className='flex flex-col justify-center mt-3 lg:ml-36 lg:w-96 '>
